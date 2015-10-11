@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,600,400italic,600italic);
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+[class*="brandico-"]:before { font-family: 'brandico', sans-serif; }
+* { box-sizing: border-box; }
+
+body {
+  font-family: Source Sans Pro, Roboto, Helvetica, sans-serif;
+  background: #1d2122;
+  color: #f5f3f5;
+}
+
+a,
+a:active,
+a:hover,
+a:link,
+a:visited {
+  color: #f5f3f5;
+}
+
+.aka {
+  font-style: italic;
+}
+
+.nickname { font-weight: bold; }
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  padding: .5em 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 .25em;
+}
+
+.social-accounts a {
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.vcard {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 252px;
+}
+
+.vcard img {
+  margin: 2em 0;
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid #f5f3f5;
+}

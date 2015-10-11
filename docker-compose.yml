@@ -1,0 +1,16 @@
+site:
+  build: .
+  volumes:
+    - ".:/site"
+
+server:
+  extends:
+    service: site
+  command: middleman server
+  ports:
+    - "4567:4567"
+
+shell:
+  extends:
+    service: site
+  command: bash
