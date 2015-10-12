@@ -1,4 +1,6 @@
 site:
+  env_file:
+    - .env
   build: .
   volumes:
     - ".:/site"
