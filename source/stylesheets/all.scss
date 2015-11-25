@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,600,400italic,600italic);
+@import url(https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700|Open+Sans:400,700|Droid+Sans:400,700);
 @import url(http://weloveiconfonts.com/api/?family=brandico);
 [class*="brandico-"]:before { font-family: 'brandico', sans-serif; }
 * { box-sizing: border-box; }
@@ -7,7 +6,12 @@
 body {
   background: #1d2122;
   color: #f5f3f5;
-  font-family: Source Sans Pro, Roboto, Helvetica, sans-serif;
+  font: .9em/1.5 Open Sans, Helvetica, sans-serif;
+}
+
+h1 {
+  font: 2.3em/1.5 Lobster, sans-serif;
+  font-weight: normal;
 }
 
 a,
@@ -19,7 +23,6 @@ a:visited {
 }
 
 .aka { font-style: italic; }
-
 .nickname { font-weight: bold; }
 
 h1 {
@@ -37,11 +40,14 @@ li {
   padding: 0 .25em;
 }
 
-.social-accounts a {
-  font-size: 1.5em;
-  text-decoration: none;
-}
+.social-accounts {
+  display: inline-block;
 
+  a {
+    font-size: 1em;
+    text-decoration: none;
+  }
+}
 .vcard {
   margin: 0 auto;
   max-width: 252px;
@@ -51,11 +57,23 @@ li {
     border: 4px solid #f5f3f5;
     border-radius: 50%;
     margin: 2em 0;
-    width: 100%;
+    width: 70%;
   }
 }
 
-a.ey {
+.work {
+
+  strong {
+    display: block;
+    font-size: 1.1em;
+  }
+  a>strong {
+    font-size: 1em;
+    display: inline;
+  }
+}
+
+a.engineyard {
   text-decoration: none;
   color: #E92429;
 }
