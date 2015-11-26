@@ -1,10 +1,18 @@
+name: Sebastian Gräßl
+
 work:
   - position: Application Support Engineer
     company: Engine Yard, Inc.
-    css: engineyard
+    color: E92429
   - position: Front-End Developer
     company: whatchado
+    color: 377784
   - position: Developer
     company: Tupalo.com
+    color: 004D80
   - position: Developer
-    comapny: Wollzelle
+    company: Wollzelle
+    color: FF9900
+  - position: Web Developer
+    company: icomedias GmbH
+    color: 0067AD

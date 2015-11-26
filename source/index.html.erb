@@ -1,20 +1,22 @@
-<div class="vcard">
+<div class="vcard" itemscope itemtype="http://schema.org/Person">
 
-  <img alt="Sebastian Gräßl" src="<%= image_path 'bastilian_sebastian_graessl.jpg' %>" class="fn photo" />
+  <img alt="Sebastian Gräßl" src="<%= image_path 'bastilian_sebastian_graessl.jpg' %>" class="vcard-avatar" itemprop="image" />
 
-  <h1>Sebastian Gräßl</h1>
-  <span class="aka">aka. <span class="nickname">bastilian</span></span>&nbsp;&nbsp;|
+  <div class="vcard-names">
+    <h1 class="vcard-fullname" itemprop="name">Sebastian Gräßl</h1>
+    <span class="aka">aka. <span class="vcard-username" itemprop="additionalName">bastilian</span></span>&nbsp;&nbsp;|
+  </div>
+
   <ul class="social-accounts">
     <li><a rel="me" href="http://twitter.com/bastilian"><span class="icon brandico-twitter-bird"></span></a></li>
     <li><a rel="me" href="http://github.com/bastilian"><span class="icon brandico-github"></span></a></li>
     <li><a rel="me" href="http://instagram.com/bastilian"><span class="icon brandico-instagram"></span></a></li>
   </ul>
 
-
   <ul class="work">
     <% data['info']['work'][0..0].each do | work | %>
       <li>
-        <strong><%= work['position'] %></strong> at <a href="http://engineyard.com/" class="<%= work["css"] -%>"><strong><%= work['company'] -%></strong></a>
+        <strong><%= work['position'] %></strong> at <a href="http://engineyard.com/" style="color: #<%= work["color"] -%>;"><strong><%= work['company'] -%></strong></a>
       </li>
     <% end %>
   </ul>

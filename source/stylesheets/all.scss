@@ -29,20 +29,14 @@ h1 {
   margin: 0;
 }
 
-ul {
-  margin: 0;
-  padding: .5em 0;
-}
-
-li {
-  display: inline-block;
-  list-style: none;
-  padding: 0 .25em;
-}
-
 .social-accounts {
   display: inline-block;
-
+  margin: 0;
+  padding: 0;
+  
+  li {
+    display: inline-block;
+  }
   a {
     font-size: 1em;
     text-decoration: none;
@@ -62,18 +56,22 @@ li {
 }
 
 .work {
+  margin: 0;
+  padding: .5em 0;
+
+  li {
+    list-style: none;
+    padding: 0 .25em;
+  }
 
   strong {
     display: block;
     font-size: 1.1em;
   }
+
   a>strong {
     font-size: 1em;
     display: inline;
+    text-decoration: none;
   }
-}
-
-a.engineyard {
-  text-decoration: none;
-  color: #E92429;
 }
