@@ -1,7 +1,4 @@
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.build_before = true
-end
+sprockets.append_path File.join "#{root}", 'bower_components'
 
 set :css_dir,    'stylesheets'
 set :js_dir,     'javascripts'
@@ -14,4 +11,7 @@ configure :build do
   activate :relative_assets
 end
 
-sprockets.append_path File.join "#{root}", 'bower_components'
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true
+end
