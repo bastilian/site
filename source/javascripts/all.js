@@ -1,4 +1,4 @@
-//= require_tree .
+//= require fetch
 
 function Map (places) {
 

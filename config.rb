@@ -13,3 +13,5 @@ configure :build do
   activate :minify_javascript
   activate :relative_assets
 end
+
+sprockets.append_path File.join "#{root}", 'bower_components'
