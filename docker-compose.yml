@@ -8,7 +8,7 @@ site:
 server:
   extends:
     service: site
-  command: middleman server
+  command: middleman server --force-polling
   ports:
     - "4567:4567"
 
