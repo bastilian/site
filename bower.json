@@ -1,0 +1,24 @@
+{
+  "name": "Bastilian.me",
+  "homepage": "https://github.com/bastilian/site",
+  "authors": [
+    "Sebastian Gräßl <sebastian@validcode.me>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fetch": "^0.11.0"
+  }
+}
