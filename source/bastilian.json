@@ -1,4 +1,85 @@
 {
+  "name": "Sebastian Gräßl",
+  "events": [
+    {
+      "date": "1986-01-07",
+      "title": "Birthday"
+    },
+    {
+      "description": "Front-End Developer",
+      "title": "whatchado",
+      "date": "2013-02-01",
+      "endDate": "2013-07-31",
+      "color": "377784"
+    },
+    {
+      "description": "Developer",
+      "title": "Tupalo.com",
+      "date": "2011-06-01",
+      "endDate": "2013-01-31",
+      "color": "004D80"
+    },
+    {
+      "description": "Developer",
+      "title": "parkside",
+      "date": "2010-06-01",
+      "endDate": "2010-10-31",
+      "color": "000000"
+    },
+    {
+      "description": "Developer",
+      "title": "wollzelle GmbH",
+      "date": "2008-03-01",
+      "endDate": "2010-06-30",
+      "color": "FF9900"
+    },
+    {
+      "description": "Web Developer",
+      "title": "icomedias GmbH",
+      "date": "2006-09-01",
+      "endDate": "2008-03-1",
+      "color": "0067AD"
+    },
+    {
+      "date": "2014-07-14",
+      "endDate": "2015-12-31",
+      "title": "Engine Yard, Inc",
+      "description": "Application Support Engineer",
+      "color": "E92429"
+    }
+  ],
+  "work": [
+    {
+      "position": "Application Support Engineer",
+      "company": "Engine Yard, Inc.",
+      "color": "E92429"
+    },
+    {
+      "position": "Front-End Developer",
+      "company": "whatchado",
+      "color": "377784"
+    },
+    {
+      "position": "Developer",
+      "company": "Tupalo.com",
+      "color": "004D80"
+    },
+    {
+      "position": "Developer",
+      "company": "parkside",
+      "color": "000000"
+    },
+    {
+      "position": "Developer",
+      "company": "Wollzelle",
+      "color": "FF9900"
+    },
+    {
+      "position": "Web Developer",
+      "company": "icomedias GmbH",
+      "color": "0067AD"
+    }
+  ],
   "places": [
     {
       "location": "Budapest, Hungary",
