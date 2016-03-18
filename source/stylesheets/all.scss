@@ -89,12 +89,91 @@ h1 {
   left: 0;
   right: 0;
   z-index: -1;
-  opacity: .3;
+  background: #1d2122;
+
+  .leaflet-tile-pane {
+    opacity: .3;
+  }
+
+  #container {
+    margin-top: 20px;
+    margin-left: 30px;
+    position: relative;
+    background: #45453f;
+  }
+
+  .marker {
+    position: inherit;
+    background: rgba(0, 0, 0, .5);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+
+  .marker.current::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    margin-top: -5px;
+    margin-left: -5px;
+    border: 2px solid #000;
+    border-radius: 50%;
+
+    animation: pulse 2200ms ease-out;
+    animation-iteration-count: infinite;
+  }
+
+  @-webkit-keyframes "pulse" {
+   0% {
+      -webkit-transform: scale(0);
+      opacity: 0.0;
+   }
+   45% {
+     -webkit-transform: scale(0.7);
+     opacity: .7;
+   }
+   100% {
+      -webkit-transform: scale(1);
+      opacity: 0;
+   }
+  }
+
+  .tooltip {
+    font-size: .8em;
+
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip-container,
+    .leaflet-popup-tip {
+      background: none;
+      box-shadow: none;
+      text-align: center;
+      opacity: .7;
+    }
+
+    .leaflet-popup-tip-container {
+      height: 0;
+    }
+
+    strong {
+      font-size: 1.2em;
+    }
+  }
+
+  .leaflet-control-attribution {
+    background: none;
+    color: #000;
+    font-weight: bold;
+    opacity: .5;
+    a {
+      color: inherit;
+    }
+  }
 }
 
 #timeline {
   bottom: 0;
-  height: 30px;
+  height: 50px;
   left: 1%;
   position: fixed;
   right: 1%;
@@ -121,6 +200,7 @@ h1 {
     opacity: .2;
     display: inline-block;
     padding-left: 5px;
+    line-height: 50px;
   }
 
   .event {
@@ -132,7 +212,13 @@ h1 {
     display: inline-block;
     border-radius: 50%;
     transition: all 250ms cubic-bezier(.47,-0.38,.55,1.97);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
 
+    &.minor {
+      margin-top: 1em;
+      transform: scale(.5, .5);
+      opacity: .8;
+    }
     &:hover {
       // transform: scale(2, 2);
       transition: all 250ms cubic-bezier(.47,-0.38,.55,1.97);
@@ -147,12 +233,23 @@ h1 {
     position: absolute;
     text-align: center;
     width: 100%;
-    bottom: -100px;
+    bottom: -200px;
     transition: all 500ms cubic-bezier(.47,-0.38,.55,1.97);
+    color: #AAA;
+    text-shadow: 1px 1px 2px #565655;
+
+    .title {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    img {
+      width: 150px;
+    }
 
     &.visible {
       transition: all 500ms cubic-bezier(.47,-0.38,.55,1.97);
-      bottom: 40px;
+      bottom: 55px;
     }
   }
 }

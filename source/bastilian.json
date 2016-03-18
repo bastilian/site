@@ -2,12 +2,57 @@
   "name": "Sebastian Gräßl",
   "events": [
     {
-      "date": "1986-01-07",
-      "title": "Birthday"
+      "type": "talk",
+      "date": "2006-04-10",
+      "title": "Talk: Ruby on Rails",
+      "description": "at OSCON Vienna"
+    },
+    {
+      "type": "talk",
+      "title": "Moderation: JSIST, Istanbul",
+      "description": "& panelist on \"Front-end Development in the World\"",
+      "date": "2014-09-27"
+    },
+    {
+      "type": "talk",
+      "title": "Moderation: Codefront.io",
+      "description": "& coordination",
+      "date": "2014-05-10"
+    },
+    {
+      "type": "talk",
+      "title" : "Talk: CSS - The good stuff",
+      "description": "at WordPress Vienna Meetup",
+      "date": "2013-02-08"
+    },
+    {
+      "type": "talk",
+      "title":"Talk: Markup & the history of markup",
+      "description": "at WordPress Vienna Meetup",
+      "date": "2013-04-04"
+    },
+    {
+      "type": "talk",
+      "title" : "Talk: Microformats & RichSnippets",
+      "description": "at WordPress Vienna Meetup",
+      "date": "2013-07-25"
+    },
+    {
+      "type": "talk",
+      "title" : "Talk: Securing WordPress",
+      "description": "at WordPress Vienna Meetup",
+      "date": "2013-09-24"
+    },
+    {
+      "type": "talk",
+      "title" : "Talk: An Introduction to Ghost",
+      "description": "at WordPress Vienna Meetup",
+      "date": "2013-01-30"
     },
     {
       "description": "Front-End Developer",
       "title": "whatchado",
+      "image": "/images/companies/whatchado.png",
       "date": "2013-02-01",
       "endDate": "2013-07-31",
       "color": "377784"
@@ -15,6 +60,7 @@
     {
       "description": "Developer",
       "title": "Tupalo.com",
+      "image": "/images/companies/tupalo.png",
       "date": "2011-06-01",
       "endDate": "2013-01-31",
       "color": "004D80"
@@ -29,6 +75,7 @@
     {
       "description": "Developer",
       "title": "wollzelle GmbH",
+      "image": "/images/companies/wollzelle.png",
       "date": "2008-03-01",
       "endDate": "2010-06-30",
       "color": "FF9900"
@@ -36,6 +83,7 @@
     {
       "description": "Web Developer",
       "title": "icomedias GmbH",
+      "image": "/images/companies/icomedias.png",
       "date": "2006-09-01",
       "endDate": "2008-03-1",
       "color": "0067AD"
@@ -44,6 +92,7 @@
       "date": "2014-07-14",
       "endDate": "2015-12-31",
       "title": "Engine Yard, Inc",
+      "image": "/images/companies/engineyard.png",
       "description": "Application Support Engineer",
       "color": "E92429"
     }
@@ -94,6 +143,7 @@
       "latlng": [48.1485965, 17.107747700000004]
     },
     {
+      "current": "true",
       "location": "Vienna, Austria",
       "latlng": [48.2081743, 16.37381890000006]
     },

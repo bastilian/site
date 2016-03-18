@@ -8,11 +8,13 @@ function TimelineEvent() {
     this.date    = new Date(this.data.date)
     this.endDate = new Date(this.data.endDate)
 
-    this.color   = this.data.color;
-    this.title = this.data.title
-    this.description = this.data.description
+    this.color       = this.data.color;
+    this.title       = this.data.title;
+    this.description = this.data.description;
+    this.image       = this.data.image;
+    this.type        = this.data.type;
 
-    this.timeline = timeline;
+    this.timeline    = timeline;
   }
 
   this.addElement = function () {
@@ -25,6 +27,14 @@ function TimelineEvent() {
 
     if (this.endDate) {
       this.addExpanding(width);
+    }
+
+    if (this.type) {
+      switch (this.type) {
+        case "talk":
+          this.element.classList.add('minor')
+          break;
+      }
     }
 
     this.element.addEventListener('mouseover', function () {

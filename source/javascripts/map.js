@@ -4,14 +4,16 @@ function Map () {
     this.token    = 'pk.eyJ1IjoiYmFzdGlsaWFuIiwiYSI6IllDZ3lNZHMifQ.uwq0dxjwyWEuG3zF59wUig';
     this.geocoder = new google.maps.Geocoder();
     this.places   = places;
-    this.placesLayer = new L.LayerGroup();
+    this.placesLayer   = new L.LayerGroup();
+    this.marker        = L.divIcon({className: 'marker', iconSize : 5});
+    this.currentMarker = L.divIcon({className: 'marker current', iconSize : 5});
 
     this.setupMap();
     this.addMarkers();
   }
 
   this.setupMap = function () {
-    this.map = L.map('map', { zoomControl: false, layers: [this.placesLayer] }).setView([50, -14], 3);
+    this.map = L.map('map', { zoomControl: false, layers: [this.placesLayer]}).setView([50, -14], 3);
 
     this.map.dragging.disable();
     this.map.touchZoom.disable();
@@ -30,7 +32,7 @@ function Map () {
         console.log(address, [results[0].geometry.location.lat(), results[0].geometry.location.lng()]);
         L.marker([results[0].geometry.location.lat(),
                   results[0].geometry.location.lng()
-        ]).addTo(this.placesLayer)
+        ], { icon: this.marker } ).addTo(this.placesLayer)
       }
     });
   }
@@ -38,7 +40,12 @@ function Map () {
   this.addMarkers = function () {
     this.places.forEach( function (city) {
       if (typeof city.latlng != 'undefined'){
-        L.marker(city.latlng).addTo(this.placesLayer)
+        console.log(city.location);
+        var marker = L.marker(city.latlng, { icon: (city.current ? this.currentMarker : this.marker) } ).addTo(this.placesLayer)
+
+        if (city.current) {
+          marker.bindPopup("currently living in<br/> <strong>" + city.location + "</strong>", { closeButton: false, zoomAnimation: false, className: 'tooltip'}).openPopup()
+        }
       } else {
         this.mapAddress(city)
       }

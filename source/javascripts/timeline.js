@@ -25,16 +25,26 @@ function Timeline () {
 
     empty(this.currentEventElement);
     removeClass(this.currentEventElement, 'visible');
+    console.log(event);
+    if (event.image) {
 
-    var title = el('span');
-    title.textContent = event.title;
+      var image = el('img');
+      image.src = event.image;
+      this.currentEventElement.appendChild(image);
 
-    if (event.color) {
-      title.style.color = '#' + event.color;
+    } else {
+
+      var title = el('span');
+      title.classList.add('title');
+      title.textContent = event.title;
+
+      if (event.color) {
+        title.style.color = '#' + event.color;
+      }
+
+      this.currentEventElement.appendChild(title);
+
     }
-
-    this.currentEventElement.appendChild(title);
-
     var description = el('p');
     description.textContent = event.description;
     this.currentEventElement.appendChild(description);
@@ -74,7 +84,7 @@ function Timeline () {
   this.addYears = function () {
     var yearsBetween = this.yearsBetween(this.startDate(), new Date(Date.now()));
 
-    for( var i = 1; i < yearsBetween; i++ ) {
+    for( var i = 0; i < yearsBetween; i++ ) {
       var elm = this.createNodeForYear(this.startDate().getFullYear()+i);
       this.yearsElement.appendChild(elm);
     }
@@ -92,7 +102,7 @@ function Timeline () {
     elm.classList.add('year')
     elm.style.left = width*monthsBetween + "%";
 
-    if (year%5 == 0) {
+    if (year%2 == 0 || year == this.startDate().getFullYear()) {
       elm.textContent = year;
     }
 
