@@ -1,3 +1,4 @@
+@import 'leaflet';
 @import url(https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700|Open+Sans:400,700|Droid+Sans:400,700);
 @import url(http://weloveiconfonts.com/api/?family=brandico);
 [class*="brandico-"]::before { font-family: 'brandico', sans-serif; }
@@ -92,7 +93,7 @@ h1 {
   background: #1d2122;
 
   .leaflet-tile-pane {
-    opacity: .3;
+    opacity: .1;
   }
 
   #container {
@@ -104,7 +105,7 @@ h1 {
 
   .marker {
     position: inherit;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .6);
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -212,11 +213,11 @@ h1 {
     display: inline-block;
     border-radius: 50%;
     transition: all 250ms cubic-bezier(.47,-0.38,.55,1.97);
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
 
     &.minor {
       margin-top: 1em;
-      transform: scale(.5, .5);
+      transform: scale(.6, .6);
       opacity: .8;
     }
     &:hover {
@@ -236,7 +237,6 @@ h1 {
     bottom: -200px;
     transition: all 500ms cubic-bezier(.47,-0.38,.55,1.97);
     color: #AAA;
-    text-shadow: 1px 1px 2px #565655;
 
     .title {
       font-weight: bold;

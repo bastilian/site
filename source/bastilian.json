@@ -9,6 +9,41 @@
     },
     {
       "type": "talk",
+      "date": "2015-09-26",
+      "title": "ROSSConf Berlin",
+      "description": "Co-Organizer",
+      "color": "EEA086"
+    },
+    {
+      "type": "talk",
+      "date": "2015-04-25",
+      "title": "ROSSConf Vienna",
+      "description": "Co-Organizer",
+      "color": "EEA086"
+    },
+    {
+      "type": "talk",
+      "date": "2012-04-17",
+      "title": "RailsGirls Krakow",
+      "description": "Ruby/Rails Coach",
+      "color": "e0330c"
+    },
+    {
+      "type": "talk",
+      "date": "2013-01-19",
+      "title": "RailsGirls Rotterdam",
+      "description": "Co-Organizer & Ruby/Rails Coach",
+      "color": "e0330c"
+    },
+    {
+      "type": "talk",
+      "date": "2013-05-31",
+      "title": "RailsGirls Maribor",
+      "description": "Ruby/Rails Coach",
+      "color": "e0330c"
+    },
+    {
+      "type": "talk",
       "title": "Moderation: JSIST, Istanbul",
       "description": "& panelist on \"Front-end Development in the World\"",
       "date": "2014-09-27"
@@ -47,7 +82,7 @@
       "type": "talk",
       "title" : "Talk: An Introduction to Ghost",
       "description": "at WordPress Vienna Meetup",
-      "date": "2013-01-30"
+      "date": "2013-02-01"
     },
     {
       "description": "Front-End Developer",

@@ -5,7 +5,6 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <title><%= current_page.data.title || "Sebastian Gräßl" %></title>
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <%= stylesheet_link_tag "normalize", "all" %>
     <script type="text/javascript">
         window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"light-bottom"};
@@ -18,7 +17,6 @@
     <%= yield %>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADczaSQDsbY4uh5VzD-xUxWTpDIeshWe0"></script>
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <%= javascript_include_tag  "all" %>
 
     <script>

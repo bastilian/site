@@ -1,4 +1,5 @@
 //= require utilities
+//= require leaflet
 //= require site
 
 (function () {
