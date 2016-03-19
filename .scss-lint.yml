@@ -1,0 +1,5 @@
+scss_files: 'source/stylesheets/**/*.css.scss'
+
+linters:
+  IdSelector:
+    enabled: false
