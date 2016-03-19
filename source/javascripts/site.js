@@ -1,26 +1,22 @@
 //= require fetch
 //= require map
 //= require timeline
+//= require content
+//= require router
 
 function Site() {
 
   this.initialize = function (url) {
     this.url      = url;
-    this.map      = Map;
-    this.timeline = new Timeline('#timeline');
+
     this.data     = {};
+    this.element  = document.querySelectorAll('#site')[0];
+    this.router   = new Router(this);
+    this.timeline = new Timeline(this);
+    this.content  = new Content(this);
+    this.map      = new Map();
 
     this.getData();
-  }
-
-  this.addMap = function () {
-    this.map = new Map(this.data.places);
-  }
-
-  this.addEvents = function () {
-    this.data.events.forEach(function (event) {
-      this.timeline.addEvent(event);
-    }.bind(this));
   }
 
   this.getData = function () {
@@ -31,17 +27,14 @@ function Site() {
         return response.json()
       })
       .then(function(json) {
-        that.data = json;
+        json.events.forEach(function (event) {
+          that.timeline.addEvent(event);
+        });
+        return that.data = json;
       })
-      .then(function () {
-        that.addMap();
-      })
-      .then(function () {
-        that.addEvents();
-      })
-      .then(function () {
-        that.timeline.render();
-      })
+      .then(function (json) {
+        that.map.addMarkers(json.places);
+      });
   }
 
   this.initialize.apply(this, arguments);

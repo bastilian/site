@@ -5,23 +5,34 @@ function TimelineEvent() {
     this.element.classList.add('event')
 
     this.data    = data;
-    this.date    = new Date(this.data.date)
-    this.endDate = new Date(this.data.endDate)
+    this.date    = new Date(this.data.date);
+    this.endDate = new Date(this.data.endDate);
 
-    this.color    = this.data.color;
-    this.title    = this.data.title;
-    this.type     = this.data.type;
+    this.color = this.data.color;
+    this.title = this.data.title;
+    this.type  = this.data.type;
+    this.url   = this.data.url;
 
     this.timeline = timeline;
+
+    this.addElement();
+  }
+
+  this.position = function () {
+    var yearsBetween = this.timeline.yearsBetween(this.timeline.startDate(), new Date(Date.now()));
+    var width  = 100/yearsBetween/12;
+    var monthsBetween = this.timeline.monthsBetween(this.timeline.startDate(), this.date);
+
+    return width*monthsBetween;
   }
 
   this.addElement = function () {
     var yearsBetween = this.timeline.yearsBetween(this.timeline.startDate(), new Date(Date.now()));
     var width  = 100/yearsBetween/12;
-    var monthsBetween = this.timeline.monthsBetween(this.timeline.startDate(), this.date);
 
-    this.setLeft(width*monthsBetween);
     this.setColor(this.color);
+
+    this.setLeft();
 
     if (this.endDate) {
       this.addExpanding(width);
@@ -32,7 +43,7 @@ function TimelineEvent() {
     }
 
     this.element.addEventListener('click', function () {
-      this.timeline.content.updateContent(this.getContent());
+      this.timeline.site.router.navigate(this.url)
     }.bind(this))
 
     this.element.addEventListener('mouseover', function () {
@@ -87,8 +98,8 @@ function TimelineEvent() {
     this.element.style.background = '#' + color;
   }
 
-  this.setLeft = function (left) {
-    this.element.style.left = left + "%";
+  this.setLeft = function () {
+    this.element.style.left = this.position() + "%";
   }
 
   this.initialize.apply(this, arguments);

@@ -1,10 +1,11 @@
 //= require timeline_event
-//= require timeline_content
 
 function Timeline () {
 
-  this.initialize = function (element) {
-    this.element = document.querySelectorAll(element)[0];
+  this.initialize = function (site) {
+    this.site    = site;
+    this.element = document.querySelectorAll('#timeline')[0];
+
     this.events  = [];
 
     this.eventsElement = el('div');
@@ -19,8 +20,6 @@ function Timeline () {
     this.currentEventElement.id = "current-event";
     this.currentEventElement.classList.add('visible');
     this.element.appendChild(this.currentEventElement);
-
-    this.content = new TimelineContent(this);
   }
 
   this.setCurrentEvent = function (event) {
@@ -45,7 +44,23 @@ function Timeline () {
     addClass(this.currentEventElement, 'visible');
   }
 
+  this.addEvent = function (data) {
+    this.events.push(new TimelineEvent(data, this));
+    empty(this.yearsElement);
+    this.renderYears();
+  }
+
+  this.adjust = function () {
+    this.events.forEach(function (timeline_event) {
+      timeline_event.setLeft();
+    })
+  }
+
   this.startDate = function () {
+    if (this.events.length == 0) {
+      return new Date(Date.now());
+    }
+
     return this.events.min(function (event) {
       return event.date
     }).date;
@@ -70,11 +85,7 @@ function Timeline () {
     return this.monthsBetween(start, end)/12;
   }
 
-  this.addEvent = function (data) {
-    this.events.push(new TimelineEvent(data, this));
-  }
-
-  this.addYears = function () {
+  this.renderYears = function () {
     var yearsBetween = this.yearsBetween(this.startDate(), new Date(Date.now()));
 
     for( var i = 0; i < yearsBetween; i++ ) {
@@ -100,20 +111,6 @@ function Timeline () {
     }
 
     return elm
-  }
-
-  this.render = function () {
-    this.events.sortBy(function (event) {
-      return event.date;
-    });
-    this.addYears();
-    this.addEvents();
-  }
-
-  this.addEvents = function () {
-    this.events.forEach(function (event) {
-      event.addElement();
-    });
   }
 
   this.initialize.apply(this, arguments);

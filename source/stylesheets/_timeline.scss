@@ -1,8 +1,9 @@
 #timeline {
+  height: 60px;
+  margin: 60px auto 0 auto;
   position: relative;
+  width: 95%;
   z-index: 1;
-  width: 90%;
-  margin: 5em auto;
 
   .year,
   .event {
@@ -19,6 +20,7 @@
   }
 
   .event {
+    left: 0;
     background: $black;
     opacity: .7;
     width: 10px;
@@ -26,7 +28,6 @@
     display: inline-block;
     border-radius: 50%;
     transition: all 250ms $bezier;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.75);
     cursor: pointer;
 
     &.talk {
@@ -61,21 +62,5 @@
     transition: all 500ms $bezier;
     top: -40px;
     opacity: 1;
-  }
-}
-
-#timeline-content {
-  position: absolute;
-  background: $translucent-background;
-  margin-top: 60px;
-  left: 0;
-  right: 0;
-
-  header {
-
-  }
-
-  section {
-
   }
 }

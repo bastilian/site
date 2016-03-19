@@ -1,16 +1,15 @@
 function Map () {
 
-  this.initialize = function (places) {
+  this.initialize = function (site) {
+    this.site     = site;
     this.token    = 'pk.eyJ1IjoiYmFzdGlsaWFuIiwiYSI6IllDZ3lNZHMifQ.uwq0dxjwyWEuG3zF59wUig';
     this.geocoder = new google.maps.Geocoder();
-    this.places   = places;
     this.placesLayer   = new L.LayerGroup();
     this.marker        = L.divIcon({className: 'marker', iconSize : 5});
     this.currentMarker = L.divIcon({className: 'marker current', iconSize : 5});
     this.map = L.map('map', { zoomControl: false, layers: [this.placesLayer]}).setView([55, -45], 3);
 
     this.setupMap();
-    this.addMarkers();
   }
 
   this.setupMap = function () {
@@ -36,17 +35,26 @@ function Map () {
     });
   }
 
-  this.addMarkers = function () {
-    this.places.forEach( function (city) {
-      if (typeof city.latlng != 'undefined'){
-        var marker = L.marker(city.latlng, { icon: (city.current ? this.currentMarker : this.marker) } ).addTo(this.placesLayer)
+  this.addMarker = function (place) {
+    if (typeof place.latlng != 'undefined'){
+      var marker = L.marker(place.latlng, { icon: (place.current ? this.currentMarker : this.marker) } )
+                    .addTo(this.placesLayer);
+    } else {
+      this.mapAddress(place.location)
+    }
 
-        if (city.current) {
-          marker.bindPopup("currently living in<br/> <strong>" + city.location + "</strong>", { closeButton: false, zoomAnimation: false, className: 'tooltip'}).openPopup()
-        }
-      } else {
-        this.mapAddress(city.location)
-      }
+    if (place.current) {
+      var popupOptions = { closeButton: false, zoomAnimation: false, className: 'tooltip'};
+      var popupText = "currently living in<br/> <strong>" + place.location + "</strong>";
+
+      marker.bindPopup(popupText, popupOptions).openPopup()
+    }
+
+  }
+
+  this.addMarkers = function (places) {
+    places.forEach( function (place) {
+      this.addMarker(place)
     }.bind(this));
   }
 

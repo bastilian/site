@@ -5,6 +5,8 @@
 @import url(http://weloveiconfonts.com/api/?family=brandico);
 [class*="brandico-"]::before { font-family: 'brandico', sans-serif; }
 
+@import 'normalize';
+
 // Components
 @import 'leaflet';
 
@@ -12,7 +14,7 @@
 @import 'animations';
 
 $background: rgb(29, 33, 34);
-$translucent-background: rgba(29, 33, 34, .8);
+$translucent-background: rgba(29, 33, 34, .85);
 $text-color: #f5f3f5;
 $black: #000;
 $light: #f5f3f5;
@@ -20,6 +22,7 @@ $light: #f5f3f5;
 // Elements
 @import 'timeline';
 @import 'map';
+@import 'content';
 
 html {
   box-sizing: border-box;
@@ -84,4 +87,11 @@ a:visited {
   ul {
     text-align: left;
   }
+}
+
+footer {
+  color: $black;
+  font-size: .8em;
+  margin: 3em auto;
+  text-align: center;
 }
