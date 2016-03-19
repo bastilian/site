@@ -8,13 +8,11 @@ function TimelineEvent() {
     this.date    = new Date(this.data.date)
     this.endDate = new Date(this.data.endDate)
 
-    this.color       = this.data.color;
-    this.title       = this.data.title;
-    this.description = this.data.description;
-    this.image       = this.data.image;
-    this.type        = this.data.type;
+    this.color    = this.data.color;
+    this.title    = this.data.title;
+    this.type     = this.data.type;
 
-    this.timeline    = timeline;
+    this.timeline = timeline;
   }
 
   this.addElement = function () {
@@ -30,12 +28,12 @@ function TimelineEvent() {
     }
 
     if (this.type) {
-      switch (this.type) {
-        case "talk":
-          this.element.classList.add('minor')
-          break;
-      }
+      this.element.classList.add(this.type)
     }
+
+    this.element.addEventListener('click', function () {
+      this.timeline.content.updateContent(this.getContent());
+    }.bind(this))
 
     this.element.addEventListener('mouseover', function () {
       this.showEvent()
@@ -59,17 +57,29 @@ function TimelineEvent() {
     this.timeline.setCurrentEvent(this);
   }
 
-  this.addExpanding = function (monthWidth) {
+  this.getContent = function () {
+    var header = el('span');
+    var content = el('p');
 
+    header.textContent  = this.title;
+    content.textContent = this.description;
+
+    return { header: header, content: content };
+  }
+
+  this.addExpanding = function (monthWidth) {
     var months = this.timeline.monthsBetween(this.date, this.endDate);
-    this.element.classList.add('expanding')
+
+    addClass(this.element, 'expanding');
 
     this.element.addEventListener('mouseover', function () {
       this.element.style.width = monthWidth*months + "%"
-    }.bind(this))
+      addClass(this.element, 'expanded');
+    }.bind(this));
 
     this.element.addEventListener('mouseout', function () {
-      this.element.style.width = "10px"
+      this.element.style.width = null;
+      removeClass(this.element, 'expanded');
     }.bind(this))
   }
 

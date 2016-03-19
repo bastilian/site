@@ -1,0 +1,66 @@
+#map {
+  background: $background;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+
+  .leaflet-tile-pane {
+    opacity: .1;
+  }
+
+  .marker {
+    background: $background;
+    border-radius: 50%;
+    height: 5px;
+    position: inherit;
+    width: 5px;
+
+    &.current::before {
+      animation: pulse 2200ms ease-out;
+      animation-iteration-count: infinite;
+      border: 2px solid $black;
+      border-radius: 50%;
+      content: '';
+      height: 15px;
+      margin-left: -5px;
+      margin-top: -5px;
+      position: absolute;
+      width: 15px;
+    }
+  }
+
+  .tooltip {
+    font-size: .8em;
+
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip-container,
+    .leaflet-popup-tip {
+      background: none;
+      box-shadow: none;
+      opacity: .7;
+      text-align: center;
+    }
+
+    .leaflet-popup-tip-container {
+      height: 0;
+    }
+
+    strong {
+      font-size: 1.2em;
+    }
+  }
+
+  .leaflet-control-attribution {
+    background: none;
+    color: $black;
+    font-weight: bold;
+    opacity: .5;
+
+    a {
+      color: inherit;
+    }
+  }
+}

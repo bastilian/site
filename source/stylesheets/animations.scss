@@ -1,0 +1,18 @@
+$bezier: cubic-bezier(.47, -.38, .55, 1.97);
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  45% {
+    opacity: .7;
+    transform: scale(.7);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

@@ -1,4 +1,5 @@
 //= require timeline_event
+//= require timeline_content
 
 function Timeline () {
 
@@ -18,6 +19,8 @@ function Timeline () {
     this.currentEventElement.id = "current-event";
     this.currentEventElement.classList.add('visible');
     this.element.appendChild(this.currentEventElement);
+
+    this.content = new TimelineContent(this);
   }
 
   this.setCurrentEvent = function (event) {
@@ -25,29 +28,19 @@ function Timeline () {
 
     empty(this.currentEventElement);
     removeClass(this.currentEventElement, 'visible');
-    console.log(event);
-    if (event.image) {
 
-      var image = el('img');
-      image.src = event.image;
-      this.currentEventElement.appendChild(image);
+    var content = el('span');
+    var title = el('span');
 
-    } else {
+    title.classList.add('title');
+    title.textContent = event.title;
 
-      var title = el('span');
-      title.classList.add('title');
-      title.textContent = event.title;
+    content.appendChild(title);
 
-      if (event.color) {
-        title.style.color = '#' + event.color;
-      }
+    if (event.color)
+      content.style.color = '#' + event.color;
 
-      this.currentEventElement.appendChild(title);
-
-    }
-    var description = el('p');
-    description.textContent = event.description;
-    this.currentEventElement.appendChild(description);
+    this.currentEventElement.appendChild(content);
 
     addClass(this.currentEventElement, 'visible');
   }
@@ -55,13 +48,13 @@ function Timeline () {
   this.startDate = function () {
     return this.events.min(function (event) {
       return event.date
-    }).date
+    }).date;
   }
 
   this.endDate = function () {
     return this.events.max(function (event) {
       return event.date
-    }).date
+    }).date;
   }
 
   this.monthsBetween = function (start, end) {

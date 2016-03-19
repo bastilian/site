@@ -1,0 +1,81 @@
+#timeline {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  margin: 5em auto;
+
+  .year,
+  .event {
+    position: absolute;
+  }
+
+  .year {
+    border-left: 1px solid $light;
+    opacity: .2;
+    display: inline-block;
+    padding-left: 5px;
+    line-height: 50px;
+    z-index: -1;
+  }
+
+  .event {
+    background: $black;
+    opacity: .7;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    transition: all 250ms $bezier;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.75);
+    cursor: pointer;
+
+    &.talk {
+      margin-top: 1em;
+      opacity: .8;
+      transform: scale(.6, .6);
+    }
+  }
+
+  .expanded {
+    border-radius: 0;
+  }
+}
+
+#current-event {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  width: 40%;
+  margin-left: -20%;
+  transition: all 500ms $bezier;
+  color: #AAA;
+  opacity: 0;
+  top: 0;
+  z-index: -1;
+
+  .title {
+    font-size: 1em;
+  }
+
+  &.visible {
+    transition: all 500ms $bezier;
+    top: -40px;
+    opacity: 1;
+  }
+}
+
+#timeline-content {
+  position: absolute;
+  background: $translucent-background;
+  margin-top: 60px;
+  left: 0;
+  right: 0;
+
+  header {
+
+  }
+
+  section {
+
+  }
+}
