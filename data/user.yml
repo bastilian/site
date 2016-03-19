@@ -1,0 +1,159 @@
+---
+  name: "Sebastian Gräßl"
+  events:
+    - type: "talk"
+      date: "2006-04-10"
+      title: "Talk: Ruby on Rails | at OSCON Vienna"
+    - type: "talk"
+      date: "2015-09-26"
+      title: "ROSSConf Berlin | Co-Organizer"
+      color: "EEA086"
+    - type: "talk"
+      date: "2014-06-14"
+      title: "RailsGirls Linz | Co-Organizer & Coach"
+      color: "e0330c"
+    - type: "talk"
+      date: "2015-04-25"
+      title: "ROSSConf Vienna | Co-Organizer"
+      color: "EEA086"
+    - type: "talk"
+      date: "2012-04-17"
+      title: "RailsGirls Krakow | Ruby & Rails Coach"
+      color: "e0330c"
+    - type: "talk"
+      date: "2013-01-19"
+      title: "RailsGirls Rotterdam | Co-Organizer & Ruby/Rails Coach"
+      color: "e0330c"
+    - type: "talk"
+      date: "2013-05-31"
+      title: "RailsGirls Maribor | Ruby & Rails Coach"
+      color: "e0330c"
+    - type: "talk"
+      title: "JSIST, Istanbul | Moderation & panelist on \"Front-end Development in the World\""
+      date: "2014-09-27"
+    - type: "talk"
+      title: "Codefront.io | Moderation & coordination"
+      date: "2014-05-10"
+    - type: "talk"
+      title: "Talk: CSS - The good stuff at WordPress Vienna Meetup"
+      date: "2013-02-08"
+    - type: "talk"
+      title: "Talk: Markup & the history of Markup at WordPress Vienna Meetup"
+      date: "2013-04-04"
+    - type: "talk"
+      title: "Talk: Microformats & RichSnippets at WordPress Vienna Meetup"
+      date: "2013-07-25"
+    - type: "talk"
+      title: "Talk: Securing WordPress at WordPress Vienna Meetup"
+      date: "2013-09-24"
+    - type: "talk"
+      title: "Talk: An Introduction to Ghost at WordPress Vienna Meetup"
+      date: "2013-02-01"
+    - type: "work"
+      title: "whatchado | Front-End Developer"
+      date: "2013-02-01"
+      endDate: "2013-07-31"
+      color: "377784"
+    - type: "work"
+      title: "Tupalo.com | Web Developer"
+      date: "2011-06-01"
+      endDate: "2013-01-31"
+      color: "004D80"
+    - type: "work"
+      title: "parkside | Web Developer"
+      date: "2010-06-01"
+      endDate: "2010-10-31"
+      color: "000000"
+    - type: "work"
+      title: "wollzelle GmbH | Web Developer"
+      date: "2008-03-01"
+      endDate: "2010-06-30"
+      color: "FF9900"
+    - type: "work"
+      title: "icomedias GmbH | Web Developer"
+      date: "2006-09-01"
+      endDate: "2008-03-1"
+      color: "0067AD"
+    - type: "work"
+      date: "2014-07-14"
+      endDate: "2015-12-31"
+      title: "Engine Yard, Inc | Application Support Engineer"
+      color: "E92429"
+  places:
+    - location: "Budapest, Hungary"
+      latlng:
+        - 47.497912
+        - 19.04023499999994
+    - location: "Krakow, Poland"
+      latlng:
+        - 50.06465009999999
+        - 19.94497990000002
+    - location: "Bratislava, Slovakia"
+      latlng:
+        - 48.1485965
+        - 17.107747700000004
+    - location: "Graz, Austria"
+      latlng:
+        - 47.070714
+        - 15.439503999999943
+    - location: "Mureck, Austria"
+      latlng:
+        - 46.7076787
+        - 15.769909999999982
+    - location: "Maribor, Slovenia"
+      latlng:
+        - 46.5546503
+        - 15.645881199999963
+    - current: "true"
+      location: "Vienna, Austria"
+      latlng:
+        - 48.2081743
+        - 16.37381890000006
+    - location: "Berlin, Germany"
+      latlng:
+        - 52.52000659999999
+        - 13.404953999999975
+    - location: "London, UK"
+      latlng:
+        - 51.5073509
+        - -0.12775829999998223
+    - location: "Bristol, UK"
+      latlng:
+        - 51.454513
+        - -2.5879099999999653
+    - location: "San Francisco, US"
+      latlng:
+        - 37.7749295
+        - -122.41941550000001
+    - location: "Austin, US"
+      latlng:
+        - 30.267153
+        - -97.74306079999997
+    - location: "Helsinki, Finland"
+      latlng:
+        - 60.16985569999999
+        - 24.93837899999994
+    - location: "Amsterdam, NL"
+      latlng:
+        - 52.3702157
+        - 4.895167899999933
+    - location: "Rotterdam, NL"
+      latlng:
+        - 51.9244201
+        - 4.477732500000002
+    - location: "Brussels, Belgium"
+      latlng:
+        - 50.8503396
+        - 4.351710300000036
+    - location: "Ghent, Belgium"
+      latlng:
+        - 51.0543422
+        - 3.717424299999948
+    - location: "Manchester, UK"
+      latlng:
+        - 53.4807593
+        - -2.2426305000000184
+    - location: "Istanbul, Turkey"
+      latlng:
+        - 41.0082376
+        - 28.97835889999999

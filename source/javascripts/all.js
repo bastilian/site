@@ -3,5 +3,5 @@
 //= require site
 
 (function () {
-  var site = new Site('/bastilian.json');
+  var site = new Site('/user.json');
 })();
