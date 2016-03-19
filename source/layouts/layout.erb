@@ -20,10 +20,29 @@
       <div id="map"></div>
       <div id='timeline'></div>
       <div id="content">
-        <header></header>
+
+        <header>
+          <h2><%= current_page.data.title || "Sebastian Gräßl" %></h2>
+        </header>
+
         <section>
           <%= yield %>
         </section>
+
+
+          <aside>
+            <div>
+              <% if current_page.data.image %>
+                <img class="featured-image" src="<%= current_page.data.image %>" alt="" />
+              <% end %>
+              <% if current_page.data.metatitle %>
+                <p>
+                  <%= current_page.data.metatitle %>
+                </p>
+              <% end %>
+            </div>
+          </aside>
+
       </div>
       <footer>
         © 2016 by Sebastian Gräßl

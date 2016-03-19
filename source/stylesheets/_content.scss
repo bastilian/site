@@ -1,16 +1,24 @@
 #content {
-  position: relative;
-  z-index: 1;
-  width: 95%;
-  margin: 0 auto 3em auto;
   background: $translucent-background;
-  padding: 1em;
+  margin: 0 auto 3em;
+  padding: 2em;
+  position: relative;
+  width: 95%;
+  z-index: 1;
 
-  header {
-
+  header,
+  section {
+    margin-left: 25%;
   }
 
-  section {
+  aside {
+    position: absolute;
+    text-align: center;
+    top: 4em;
+    width: 22%;
 
+    img {
+      max-width: 80%;
+    }
   }
 }

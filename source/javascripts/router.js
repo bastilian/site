@@ -17,7 +17,7 @@ function Router() {
     content = el('div');
     content.innerHTML = elm.querySelectorAll('#content')[0].innerHTML;
 
-    return { header: el('p'), content: content };
+    return content;
   }
 
   this.navigate = function (url) {
