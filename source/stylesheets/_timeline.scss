@@ -1,6 +1,6 @@
 #timeline {
   height: 60px;
-  margin: 60px auto 0 auto;
+  margin: 1em auto 0 auto;
   position: relative;
   width: 95%;
   z-index: 1;
@@ -46,8 +46,8 @@
   position: absolute;
   text-align: center;
   left: 50%;
-  width: 40%;
-  margin-left: -20%;
+  width: 90%;
+  margin-left: -45%;
   transition: all 500ms $bezier;
   color: #AAA;
   opacity: 0;
@@ -60,7 +60,7 @@
 
   &.visible {
     transition: all 500ms $bezier;
-    top: -40px;
+    top: -3.2em;
     opacity: 1;
   }
 }

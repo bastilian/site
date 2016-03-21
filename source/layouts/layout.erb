@@ -13,22 +13,21 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
   </head>
 
-  <body class="<%= page_classes %>">
-    <div id="site">
+  <body>
+    <div id="site" class="<%= current_page.path == 'index.html' ? 'index' : '' %>">
       <%= partial 'header' %>
 
       <div id="map"></div>
       <div id='timeline'></div>
-      <div id="content">
+        <div id="content">
 
-        <header>
-          <h2><%= current_page.data.title || "Sebastian Gräßl" %></h2>
-        </header>
+          <header>
+            <h2><%= current_page.data.title || "Sebastian Gräßl" %></h2>
+          </header>
 
-        <section>
-          <%= yield %>
-        </section>
-
+          <section>
+            <%= yield %>
+          </section>
 
           <aside>
             <div>
@@ -43,7 +42,7 @@
             </div>
           </aside>
 
-      </div>
+        </div>
       <footer>
         © 2016 by Sebastian Gräßl
       </footer>
