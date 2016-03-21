@@ -1,5 +1,10 @@
 ---
   name: "Sebastian Gräßl"
+  alias: "bastilian"
+  tags:
+    - Programmer with a <span class="icon typicons-heart"></span> for Web Development
+    - Data & Information nerd
+    - Free & Open culture enthusiast
   events:
     - type: "talk"
       date: "2006-04-10"

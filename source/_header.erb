@@ -1,19 +1,23 @@
 <header class="vcard" itemscope itemtype="http://schema.org/Person">
 
   <div class="image">
-    <img alt="Sebastian Gräßl" src="<%= image_path 'bastilian_sebastian_graessl.jpg' %>" class="vcard-avatar" itemprop="image" />
+    <a href="/">
+      <img alt="Sebastian Gräßl" src="<%= image_path 'bastilian_sebastian_graessl.jpg' %>" class="vcard-avatar" itemprop="image" />
+    </a>
   </div>
 
   <div class="vcard-names">
-    <h1 class="vcard-fullname" itemprop="name">Sebastian Gräßl</h1>
-    <span class="aka">aka. <span class="vcard-username" itemprop="additionalName">bastilian</span></span>
+    <h1 class="vcard-fullname" itemprop="name"><%= data.user.name %></h1>
+    <% if data.user.alias %>
+      <span class="aka">aka. <span class="vcard-username" itemprop="additionalName"><%= data.user.alias %></span></span>
+    <% end %>
   </div>
 
   <div class="tags">
     <ul>
-      <li>Programmer</li>
-      <li>Data &amp; Information nerd</li>
-      <li>Free &amp; Open culture enthusiast</li>
+      <%- data.user.tags.each do | tag | %>
+        <li><%= tag.html_safe %></li>
+      <%- end %>
     </ul>
   </div>
 
