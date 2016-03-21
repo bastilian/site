@@ -1,13 +1,16 @@
 // Google Web Font
 @import url(https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700|Open+Sans:400,700|Droid+Sans:400,700);
 
-// Icon Font
+// Icon Fonts
 @import url(http://weloveiconfonts.com/api/?family=brandico);
 [class*="brandico-"]::before { font-family: 'brandico', sans-serif; }
 
+@import url(http://weloveiconfonts.com/api/?family=typicons);
+[class*="typicons-"]:before { font-family: 'Typicons', sans-serif; }
+
 @import 'normalize';
 
-// Components
+// Bower Components
 @import 'leaflet';
 
 // Support Styles
@@ -18,128 +21,11 @@ $translucent-background: rgba(29, 33, 34, .85);
 $text-color: #f5f3f5;
 $black: #000;
 $light: #f5f3f5;
+$red: rgb(227, 28, 28);
 
-// Elements
+// Components
+@import 'base';
 @import 'timeline';
 @import 'map';
 @import 'content';
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  background: $background;
-  color: $text-color;
-  font: .9em/1.5 Open Sans, Helvetica, sans-serif;
-}
-
-h1 {
-  font: 2.3em/1.5 Lobster, sans-serif;
-  font-weight: normal;
-  margin: 0;
-}
-
-a,
-a:active,
-a:hover,
-a:link,
-a:visited {
-  color: $text-color;
-}
-
-.vcard {
-  margin: 0 auto;
-  padding: 1em 0;
-  position: relative;
-  width: 95%;
-
-  .aka { font-style: italic; }
-  .nickname { font-weight: bold; }
-}
-
-.image,
-.vcard-names,
-.tags {
-  display: inline-block;
-  margin: 0 1% 0 0;
-  max-width: 32%;
-  padding: 0;
-  vertical-align: middle;
-}
-
-.index {
-  .vcard {
-    margin-bottom: 20%;
-  }
-
-  .image,
-  .vcard-names,
-  .tags {
-    max-width: 100%;
-    text-align: center;
-    width: 100%;
-  }
-
-  .tags {
-
-    ul,
-    li {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    ul {
-      margin: 1em 0;
-    }
-  }
-
-}
-
-.image {
-  img {
-    border: 2px solid $light;
-    border-radius: 50%;
-    width: 130px;
-  }
-}
-
-.social-accounts {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  opacity: .5;
-
-  li {
-    display: inline-block;
-  }
-
-  a {
-    font-size: 1em;
-    text-decoration: none;
-  }
-}
-
-.vcard-names {
-  h1 {
-    margin: 0;
-    padding: 0;
-    line-height: normal;
-  }
-}
-
-footer {
-  color: $black;
-  font-size: .8em;
-  margin: 3em auto;
-  text-align: center;
-}
+@import 'header';

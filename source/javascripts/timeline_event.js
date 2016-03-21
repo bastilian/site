@@ -1,7 +1,7 @@
 function TimelineEvent() {
 
   this.initialize = function (data, timeline) {
-    this.element = el('span');
+    this.element = el('a');
     this.element.classList.add('event')
 
     this.data    = data;
@@ -42,9 +42,7 @@ function TimelineEvent() {
       this.element.classList.add(this.type)
     }
 
-    this.element.addEventListener('click', function () {
-      this.timeline.site.router.navigate(this.url)
-    }.bind(this))
+    this.element.href = this.url;
 
     this.element.addEventListener('mouseover', function () {
       this.showEvent()

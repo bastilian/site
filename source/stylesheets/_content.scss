@@ -1,24 +1,37 @@
 #content {
   background: $translucent-background;
-  margin: 0 auto 3em;
+  margin: 1em 2em;
   padding: 2em;
   position: relative;
-  width: 95%;
+  transition: all 500ms $bezier;
+  overflow: auto;
   z-index: 1;
 
   header,
   section {
-    margin-left: 25%;
+    width: 75%;
+    float: right;
   }
 
   aside {
-    position: absolute;
-    text-align: center;
-    top: 4em;
     width: 22%;
+    font-size: .9em;
 
-    img {
-      max-width: 80%;
+    .image {
+      padding: 2em 0;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+      }
     }
   }
+}
+
+.index #content {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+
+  transition: all 500ms $bezier;
 }

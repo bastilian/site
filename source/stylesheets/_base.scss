@@ -1,0 +1,47 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: $background;
+  color: $text-color;
+  font: .9em/1.5 Open Sans, Helvetica, sans-serif;
+}
+
+h1 {
+  font: 2.3em/1.5 Lobster, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+
+h2 {
+  border-bottom: 1px solid $light;
+  margin: 0;
+  padding: 0 0 .5em;
+}
+
+a,
+a:active,
+a:hover,
+a:link,
+a:visited {
+  color: $text-color;
+  outline: 0;
+}
+
+footer {
+  color: $black;
+  font-size: .8em;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.typicons-heart {
+  color: $red;
+}

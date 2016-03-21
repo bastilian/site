@@ -1,0 +1,77 @@
+.vcard {
+  margin: 2em;
+  padding: 0;
+  position: relative;
+  transition: all 500ms ease-out;
+
+  .image {
+    width: 15%;
+
+    img {
+      border: 2px solid $light;
+      border-radius: 50%;
+      width: 130px;
+    }
+  }
+
+  .aka { font-style: italic; }
+  .nickname { font-weight: bold; }
+}
+
+.vcard .image,
+.vcard-names,
+.tags {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: all 500ms ease-out;
+  vertical-align: middle;
+}
+
+.vcard-names {
+  width: 20%;
+}
+
+.tags {
+  margin: 0;
+  opacity: .6;
+  text-align: right;
+  width: 64.3%;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.index {
+  .vcard {
+    margin-bottom: 25%;
+  }
+}
+
+.social-accounts {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: .5;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    font-size: 1em;
+    text-decoration: none;
+  }
+}
+
+.vcard-names {
+  h1 {
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+  }
+}

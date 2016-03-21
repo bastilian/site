@@ -2,6 +2,48 @@ function Router() {
 
   this.initialize = function (site) {
     this.site = site;
+
+    this.registerLinkListener();
+  }
+
+  this.getLink = function (element, depth) {
+    var elm;
+
+    if (!index)
+      var index = 1;
+
+    if (!depth)
+      var depth = 2;
+
+    while (index < depth) {
+      if (element.parentNode.tagName == 'A') {
+        elm = element.parentNode;
+        break;
+      }
+
+      index++;
+    }
+
+    return elm;
+  }
+
+  this.registerLinkListener = function () {
+    this.site.element.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      var link = event.target;
+
+      if (!link.href)
+        link = this.getLink(event.target);
+
+      this.navigate(link.href);
+
+      event.stopPropagation();
+    }.bind(this))
+
+    window.addEventListener('popstate', function (event) {
+      this.fetchContent(event.target.location.pathname);
+    }.bind(this))
   }
 
   this.parseHtml = function (aHTMLString) {
@@ -14,16 +56,18 @@ function Router() {
   this.getContent = function (response) {
     var elm = this.parseHtml(response);
 
-    content = el('div');
+    var content = el('div');
     content.innerHTML = elm.querySelectorAll('#content')[0].innerHTML;
 
-    return content;
+    var site_classes = elm.querySelectorAll('#site')[0].classList
+
+    return { content: content, site_classes: site_classes };
   }
 
-  this.navigate = function (url) {
+  this.fetchContent = function (url) {
     var that = this;
 
-    fetch(url)
+    return fetch(url)
       .then(function (response) {
         return response.text();
       })
@@ -32,9 +76,13 @@ function Router() {
       })
       .then(function (content) {
         that.site.content.updateContent(content);
-      })
+      });
+  }
+
+  this.navigate = function (url) {
+    this.fetchContent(url)
       .then(function () {
-        history.pushState({}, "Sebastian Gräßl", url);
+        history.pushState(null, null, url);
       })
   }
 
