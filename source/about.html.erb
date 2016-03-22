@@ -1,0 +1,19 @@
+<% data.user.events.group_by {|a|
+    Date.new(*a.date.split("-").map {|e| e.to_i }).year
+  }.sort_by{|year| year }.reverse.each do |year, events| %>
+  <h3><%= year %></h3>
+  <ul>
+    <% events.sort_by{|e| e.type }.reverse.each do |event| %>
+      <li>
+        <%= event.title %>
+
+        <% if event.url %>
+          <% article = blog.articles.select {|a| a.url.chomp('/') == event.url }[0] %>
+          <% if article %>
+            <%= article.body %>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
