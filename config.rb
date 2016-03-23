@@ -1,3 +1,6 @@
+require 'lib/custom_helpers'
+helpers CustomHelpers
+
 sprockets.append_path File.join "#{root}", 'bower_components'
 
 set :css_dir,    'stylesheets'
