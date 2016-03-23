@@ -1,17 +1,39 @@
-<% data.user.events.group_by {|a|
-    Date.new(*a.date.split("-").map {|e| e.to_i }).year
-  }.sort_by{|year| year }.reverse.each do |year, events| %>
+
+<dl>
+  <dt>Living in:</dt>
+  <dd>Vienna, Austria</dd>
+  <dt>Born in:</dt>
+  <dd>Graz, Austria</dd>
+  <dt>Born on:</dt>
+  <dd>7th January 1986</dd>
+  <dt>Languages:</dt>
+  <dd>German, English</dd>
+  <dt>Working with:</dt>
+  <dd>Ruby, JavaScript, Docker, HTML, CSS, PHP, Python, PostgreSQL, nginx, git, zsh, *nix-systems</dt>
+</dl>
+
+<p>
+  I started working as a web developer in 2006 doing mainly frontend development and working on projects with Rails in my spare time.
+  In 2008 I went on working with Rails at my day-job, improving and maintaining <a href="http://fluxiom.com">Fluxiom</a> as well as building custom solutions for clients based on BrowserCMS, Mephisto and WordPress, including building rich JavaScript frontends.
+  After more than 2 years I took a little detour and learned ColdFusion while working at a small agency for a while.
+  To work with Ruby and Rails again and started working for <a href="http://tupalo.com">Tupalo.com</a>.
+  After a period of freelancing and working for startups, like whatchado, I joined <a href="http://engineyard.com">Engine Yard</a> as <strong>Application Support Engineer</strong>.
+</p>
+
+<% group_events_by(data.user.events, :year).reverse.each do |year, events| %>
   <h3><%= year %></h3>
   <ul>
-    <% events.sort_by{|e| e.type }.reverse.each do |event| %>
+    <% events.sort_by { |e| e.type }.reverse.each do |event| %>
       <li>
-        <%= event.title %>
+        <strong<%= event.color ? " style='color:##{event.color}'" : '' %>><%= event.title %></strong>
 
         <% if event.url %>
-          <% article = blog.articles.select {|a| a.url.chomp('/') == event.url }[0] %>
+          <% article = find_article(event.url) %>
+
           <% if article %>
             <%= article.body %>
           <% end %>
+
         <% end %>
       </li>
     <% end %>
