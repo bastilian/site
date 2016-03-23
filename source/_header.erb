@@ -13,11 +13,17 @@
     <% end %>
   </div>
 
+  <nav>
+    <ul>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
   <div class="tags">
     <ul>
-      <%- data.user.tags.each do | tag | %>
+      <% data.user.tags.each do | tag | %>
         <li><%= tag.html_safe %></li>
-      <%- end %>
+      <% end %>
     </ul>
   </div>
 

@@ -12,12 +12,14 @@
 
 // Bower Components
 @import 'leaflet';
+@import 'bourbon';
 
 // Support Styles
 @import 'animations';
 
 $background: rgb(29, 33, 34);
 $translucent-background: rgba(29, 33, 34, .85);
+$very-translucent-background: rgba(29, 33, 34, .3);
 $text-color: #f5f3f5;
 $black: #000;
 $light: #f5f3f5;
