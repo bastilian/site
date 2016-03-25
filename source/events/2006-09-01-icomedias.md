@@ -5,4 +5,19 @@ date: 2006-09-01 00:00 UTC
 image: /events/2006/09/01/icomedias/icomedias.png
 ---
 
-Transforming XML with XSLT into HTML, styling it with CSS and making it interactive with JS for clients like Land Steiermark, Rentenbank, Willy Brandt Haus.
+My main focus at icomedias was front end development for various clients
+ensuring cross-browser compatibility, while retaining valid and semantic
+HTML & CSS. Another big part was relaunching sites with WAI conformance
+in mind.
+
+All projects shared a proprietary CMS and a XML/XSLT based template-engine.
+
+### Projects
+
+#### Land Steiermark
+
+#### Rentenbank
+
+![Rentenbank](/events/2006/09/01/icomedias/rentenbank.png)
+
+#### Willy Brandt Haus

@@ -20,15 +20,20 @@
       @include column-gap(3em);
       @include column-rule-style(dashed);
       @include column-rule-width(1px);
-      padding: 1em 0;
+      padding: .5em 0 1em;
       text-align: justify;
+    }
+
+    img {
+      max-width: 40%;
     }
 
     dl {
       @include column-rule-style(none);
     }
 
-    dt, dd {
+    dt,
+    dd {
       display: inline-flex;
       line-height: 1.8em;
     }
