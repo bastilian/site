@@ -60,8 +60,9 @@ function Router() {
     content.innerHTML = elm.querySelectorAll('#content')[0].innerHTML;
 
     var site_classes = elm.querySelectorAll('#site')[0].classList
+    var title        = elm.querySelectorAll('title')[0].textContent;
 
-    return { content: content, site_classes: site_classes };
+    return { content: content, site_classes: site_classes, title: title };
   }
 
   this.fetchContent = function (url) {
@@ -76,6 +77,11 @@ function Router() {
       })
       .then(function (content) {
         that.site.content.updateContent(content);
+
+        return content;
+      })
+      .then(function (content) {
+        document.title = content.title;
       });
   }
 
