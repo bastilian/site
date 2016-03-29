@@ -16,10 +16,6 @@
   section {
     p,
     dl {
-      @include column-count(2);
-      @include column-gap(3em);
-      @include column-rule-style(dashed);
-      @include column-rule-width(1px);
       padding: .5em 0 1em;
       text-align: justify;
     }
@@ -28,24 +24,8 @@
       max-width: 40%;
     }
 
-    dl {
-      @include column-rule-style(none);
-    }
-
-    dt,
-    dd {
-      display: inline-flex;
-      line-height: 1.8em;
-    }
-
     dt {
       font-weight: bold;
-      width: 25%;
-    }
-
-    dd {
-      margin: 0;
-      width: 70%;
     }
   }
 
@@ -71,4 +51,43 @@
   padding: 0;
 
   transition: all 500ms $bezier;
+}
+
+.about-timeline {
+  strong.big {
+    font-size: 1.2em;
+  }
+  .metatitle {
+    display: block;
+    font-size: .9em;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li {
+    margin-right: 1%;
+    overflow: auto;
+    vertical-align: top;
+    width: 100%;
+
+    p {
+      text-align: left;
+      margin: 0 0 .5em 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 1em;
+    }
+
+    img {
+      display: inline-block;
+      float: left;
+      width: 110px;
+      padding: .5em;
+      margin: .5em 1em 1em 0;
+    }
+  }
 }

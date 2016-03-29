@@ -12,9 +12,18 @@ body,
 #content {
   font-size: .9em;
 
+  section,
+  header {
+    width: 100%;
+  }
+
   section p,
   section dl {
     @include column-count(1);
+  }
+
+  aside {
+    display: none;
   }
 }
 
