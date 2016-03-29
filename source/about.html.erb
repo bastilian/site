@@ -1,3 +1,6 @@
+---
+title: "Hi! I'm Sebastian"
+---
 
 <dl>
   <dt>Living in:</dt>
@@ -9,15 +12,18 @@
   <dt>Languages:</dt>
   <dd>German, English</dd>
   <dt>Working with:</dt>
-  <dd>Ruby, JavaScript, Docker, HTML, CSS, PHP, Python, PostgreSQL, nginx, git, zsh, *nix-systems</dt>
+  <dd>Ruby, JavaScript, HTML, CSS, PostgreSQL, RethinkDB, Docker, CoreOS, nginx, git, bash, zsh, *nix-systems</dt>
 </dl>
 
 <p>
-  I started working as a web developer in 2006 doing mainly frontend development and working on projects with Rails in my spare time.
-  In 2008 I went on working with Rails at my day-job, improving and maintaining <a href="http://fluxiom.com">Fluxiom</a> as well as building custom solutions for clients based on BrowserCMS, Mephisto and WordPress, including building rich JavaScript frontends.
+  In 2006 I started working as a web developer doing mainly front end development and working on projects with Ruby and Rails in my spare time.
+  I went on working with Rails at my day-job two years later, improving and maintaining <a href="http://fluxiom.com">Fluxiom</a> as well as building custom solutions for clients based on BrowserCMS, Mephisto and WordPress and building rich JavaScript front ends at wollzelle.
   After more than 2 years I took a little detour and learned ColdFusion while working at a small agency for a while.
   To work with Ruby and Rails again and started working for <a href="http://tupalo.com">Tupalo.com</a>.
   After a period of freelancing and working for startups, like whatchado, I joined <a href="http://engineyard.com">Engine Yard</a> as <strong>Application Support Engineer</strong>.
+</p>
+<p>
+  In my free time I occasionally attend meetups and conferences, give talks and sometimes organize events like RailsGirls Workshops and ROSSConf.
 </p>
 
 <% group_events_by(data.user.events, :year).reverse.each do |year, events| %>
@@ -29,6 +35,10 @@
 
         <% if event.url %>
           <% article = find_article(event.url) %>
+
+          <% if article.data.metatitle %>
+            <span class="metatitle"><%= article.data.metatitle %></span>
+          <% end %>
 
           <% if article %>
             <%= article.body %>
