@@ -5,14 +5,14 @@ date: 2008-03-01 00:00 UTC
 image: /events/2008/03/01/wollzelle/wollzelle.png
 ---
 
-Maintaining sites of customers, implementing custom solutions and training them was part of my job as well as improving and maintaining the Ruby and Rails based digital asset management application Fluxiom.com was the main project I was working on at wollzelle. Implementing new features in the Prototype & Scriptaculous based front and on the server side was part of the work on Fluxiom as well as handling day to day tasks for it like customer support and operations tasks.
+Maintaining sites of customers, implementing custom solutions and training them was part of my job as well as improving and maintaining the Ruby and Rails based digital asset management application Fluxiom.com. Implementing new features in the Prototype & Scriptaculous based front and on the server side was part of the work on Fluxiom as well as handling day to day tasks for it like customer support and operations tasks.
 
 
 **Some Projects**
 
 *   **Fluxiom**
     ![Fluxiom Logo](/events/2008/03/01/wollzelle/fluxiom.png)
-    As one of my first full-stack projects it allowed me to apply and learn skills in a variety of environments. One notable feature I implemented is the "Inbox" to allow uploads for unauthenticated users and approve the uploads by authenticated users that makes use of the nginx upload progress module. Another project for Fluxiom was an OS X Dashboard Widget for Mac users and a Google Chrome Extension. Other work included improving the overall user experience on the front end, improving the backend along with it, optimize the infrastructure and architecture.
+    As one of my first full-stack projects it allowed me to apply and learn skills in a variety of environments. One notable feature I implemented is the "Inbox" to allow uploads for unauthenticated users and approve the uploads by authenticated users which makes use of the nginx upload progress module. Another project for Fluxiom was an OS X Dashboard Widget for Mac users and a Google Chrome Extension. Other work included improving the overall user experience on the front end, improving the backend along with it, optimize the infrastructure and architecture.
 
 *   **Gucci.com**
     ![Gucci Logo](/events/2008/03/01/wollzelle/gucci.png)

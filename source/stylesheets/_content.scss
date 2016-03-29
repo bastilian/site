@@ -53,7 +53,7 @@
   transition: all 500ms $bezier;
 }
 
-.about-timeline {
+.about-event {
   strong.big {
     font-size: 1.2em;
   }
@@ -80,6 +80,7 @@
     strong {
       display: block;
       font-size: 1em;
+      margin-bottom: 1em;
     }
 
     img {
