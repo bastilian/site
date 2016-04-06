@@ -29,16 +29,16 @@ function Router() {
 
   this.registerLinkListener = function () {
     this.site.element.addEventListener('click', function (event) {
-      event.preventDefault();
-
       var link = event.target;
 
       if (!link.href)
         link = this.getLink(event.target);
 
-      this.navigate(link.href);
-
-      event.stopPropagation();
+      if (link && !link.href.startsWith('http')) {
+        this.navigate(link.href);
+        event.preventDefault();
+        event.stopPropagation();
+      }
     }.bind(this))
 
     window.addEventListener('popstate', function (event) {
