@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "fetch": "^0.11.0",
-    "bourbon": "^4.2.6"
+    "bourbon": "^4.2.6",
+    "leaflet": "^0.7.7"
   }
 }
