@@ -9,9 +9,7 @@ set :images_dir, 'images'
 
 configure :build do
   activate :minify_css
-  activate :bower
   activate :minify_javascript
-  activate :relative_assets
 end
 
 activate :deploy do |deploy|
