@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 rvm:
-- 2.2.3
+- 2.1.0
 branches:
   only:
   - master
@@ -9,6 +9,6 @@ install:
   - npm install -g bower
   - bower install
 script:
-  - rake travis:script --trace
+- bundle exec rake travis:script
 after_success:
-  - rake travis:after_success
+- bundle exec rake travis:after_success
