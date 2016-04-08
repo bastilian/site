@@ -6,6 +6,7 @@ branches:
   only:
   - master
 install:
+  - npm install -g bower
   - bower install
 script:
   - bundle exec rake travis:script
