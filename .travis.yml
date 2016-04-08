@@ -6,6 +6,7 @@ branches:
   only:
   - master
 install:
+  - bundle install
   - npm install -g bower
   - bower install
 script:
