@@ -5,6 +5,8 @@ rvm:
 branches:
   only:
   - master
+install:
+  - bower install
 script:
   - bundle exec rake travis:script
 after_success:
