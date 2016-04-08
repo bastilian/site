@@ -9,6 +9,6 @@ install:
   - npm install -g bower
   - bower install
 script:
-  - rake travis:script
+  - rake travis:script --trace
 after_success:
   - rake travis:after_success
