@@ -2,7 +2,7 @@ task default: %w[test]
 
 task :test do
   puts "\nBuilding project"
-  try 'middleman build'
+  try 'middleman build --verbose'
 end
 
 task :deploy do
@@ -10,7 +10,7 @@ task :deploy do
   try 'cp -rv ./github/* ./build/'
 
   puts "\nDeploying to GitHub"
-  try 'middleman deploy'
+  try 'middleman deploy --verbose'
 end
 
 namespace :travis do
