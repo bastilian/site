@@ -32,5 +32,5 @@ end
 
 def try(command)
   system command
-  fail "Command: `#{command}` exited with code #{$CHILD_STATUS.exitstatus}" if $CHILD_STATUS != 0
+  fail "Command: `#{command}` exited with code #{$CHILD_STATUS}" if $CHILD_STATUS != 0
 end
