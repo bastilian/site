@@ -92,6 +92,10 @@
       title: "Engine Yard, Inc | Application Support Engineer"
       color: "E92429"
       url: "/events/2014/07/14/engineyard"
+    - type: "project"
+      date: "2016-05-01"
+      title: "Atom Packages Directory"
+      url: "http://atom-packages.directory"
   places:
     - location: "Budapest, Hungary"
       latlng:

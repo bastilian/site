@@ -17,10 +17,11 @@
 // Support Styles
 @import 'animations';
 
-$background: rgb(29, 33, 34);
-$translucent-background: rgba(29, 33, 34, .85);
+$background: rgb(255, 255, 255);
+$translucent-background: rgba(29, 33, 34, .9);
 $very-translucent-background: rgba(29, 33, 34, .3);
-$text-color: #f5f3f5;
+$text-color: rgba(229, 233, 234, 1);
+$header-text-color: rgba(29, 33, 34, 1);
 $black: #000;
 $light: #f5f3f5;
 $red: rgb(227, 28, 28);

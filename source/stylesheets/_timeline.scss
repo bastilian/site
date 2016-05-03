@@ -27,11 +27,17 @@
     opacity: .7;
     transition: all 250ms $bezier;
     width: 15px;
+    box-shadow: 0 0 2px rgba(255, 255, 255, .5);
 
     &.talk {
       margin-top: 1.5em;
       opacity: .8;
       transform: scale(.6, .6);
+    }
+    &.project {
+      margin-top: 1em;
+      opacity: .8;
+      transform: scale(.8, .8);
     }
   }
 
@@ -54,6 +60,7 @@
 
   .title {
     font-size: 1em;
+    font-weight: bold;
   }
 
   &.visible {

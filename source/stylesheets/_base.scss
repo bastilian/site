@@ -45,3 +45,11 @@ footer {
 .typicons-heart {
   color: $red;
 }
+
+.fork {
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scale(.7, .7);
+}
