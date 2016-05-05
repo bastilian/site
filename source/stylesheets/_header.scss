@@ -91,9 +91,14 @@ nav {
   }
 
   a {
-    font-size: 1em;
+    display: inline-block;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    margin: 0 0 0 .2em;
     text-decoration: none;
+    vertical-align: middle;
   }
+
 }
 
 .vcard-names {
