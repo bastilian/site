@@ -42,7 +42,9 @@ function TimelineEvent() {
       this.element.classList.add(this.type)
     }
 
-    this.element.href = this.url;
+    if (this.url) {
+      this.element.href = this.url;
+    }
 
     this.element.addEventListener('mouseover', function () {
       this.showEvent()
