@@ -39,6 +39,10 @@ title: "Hi! I'm Sebastian"
 
           <% if article && article.data.metatitle %>
             <span class="metatitle"><%= article.data.metatitle %></span>
+          <% elsif !article %>
+            <span class="metatitle">
+              <a href="<%= event.url %>"><%= event.url %></a>
+            </span>
           <% end %>
 
           <% if article %>
