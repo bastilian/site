@@ -82,7 +82,7 @@ function Timeline () {
   }
 
   this.yearsBetween = function (start, end) {
-    return this.monthsBetween(start, end)/12;
+    return (this.monthsBetween(start, end)/12)+1;
   }
 
   this.renderYears = function () {
@@ -106,9 +106,13 @@ function Timeline () {
     elm.classList.add('year')
     elm.style.left = width*monthsBetween + "%";
 
-    if (year%2 == 0 || year == this.startDate().getFullYear()) {
+    if (year%1 == 0 || year == this.startDate().getFullYear()) {
       elm.textContent = year;
     }
+
+    elm.addEventListener('click', function () {
+      location.href = '/about#' + year;
+    })
 
     return elm
   }

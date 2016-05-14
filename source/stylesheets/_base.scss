@@ -31,14 +31,14 @@ a:active,
 a:hover,
 a:link,
 a:visited {
-  color: $header-text-color;
+  color: $light;
   outline: 0;
 }
 
 footer {
   color: $black;
   font-size: .8em;
-  margin: 1em auto;
+  margin: 1em auto 10em auto;
   text-align: center;
 }
 
@@ -47,9 +47,11 @@ footer {
 }
 
 .fork {
+  background: $black;
   display: block;
   left: 0;
   position: absolute;
   top: 0;
   transform: scale(.7, .7);
+  z-index: -1;
 }
