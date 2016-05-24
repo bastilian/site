@@ -54,9 +54,18 @@
 }
 
 .about-event {
-  strong.big {
+  .big {
     font-size: 1.2em;
   }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
   .metatitle {
     display: block;
     font-size: .9em;

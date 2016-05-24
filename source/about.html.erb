@@ -32,18 +32,14 @@ title: "Hi! I'm Sebastian"
   <ul class="about-event">
     <% events.sort_by { |e| e.type }.reverse.each do |event| %>
       <li>
-        <strong<%= ' class="big"' if event.url %><%= event.color ? " style='color:##{event.color}'" : '' %>><%= event.title %></strong>
+        <strong<%= ' class="big"' if event.url %>>
+          <a href="<%= event.url %>"<%= event.color ? " style='color:##{event.color}'" : '' %>>
+            <%= event.title %>
+          </a>
+        </strong>
 
         <% if event.url %>
           <% article = find_article(event.url) %>
-
-          <% if article && article.data.metatitle %>
-            <span class="metatitle"><%= article.data.metatitle %></span>
-          <% elsif !article %>
-            <span class="metatitle">
-              <a href="<%= event.url %>"><%= event.url %></a>
-            </span>
-          <% end %>
 
           <% if article %>
             <%= article.body %>

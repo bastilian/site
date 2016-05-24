@@ -42,8 +42,10 @@ nav {
   }
 
   a,
-  a:visited,
-  a:active {
+  a:active,
+  a:hover,
+  a:link,
+  a:visited {
     background: none;
     color: $header-text-color;
     padding: .2em;
