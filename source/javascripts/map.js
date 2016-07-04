@@ -41,14 +41,6 @@ function Map () {
     } else {
       this.mapAddress(place.location)
     }
-
-    if (place.current) {
-      var popupOptions = { closeButton: false, zoomAnimation: false, className: 'tooltip'};
-      var popupText = "currently living in<br/> <strong>" + place.location + "</strong>";
-
-      marker.bindPopup(popupText, popupOptions).openPopup()
-    }
-
   }
 
   this.addMarkers = function (places) {
