@@ -27,9 +27,9 @@ $ bundle install
 $ bundle exec middleman server
 ```
 
-Open the site on `http://IP:4567`*****
+Open the site on `http://IP:4567`*
 
-_***** `IP` is either your Docker IP or localhost._
+_* `IP` is either your Docker IP or localhost._
 
 ## Contribute
 
