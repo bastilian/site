@@ -87,10 +87,9 @@ function Timeline () {
 
   this.renderYears = function () {
     var yearsBetween = this.yearsBetween(this.startDate(), new Date(Date.now()));
-
     for( var i = 0; i < yearsBetween; i++ ) {
-      var elm = this.createNodeForYear(this.startDate().getFullYear()+i);
-      this.yearsElement.appendChild(elm);
+      var elm = this.createNodeForYear(this.startDate().getFullYear() + i)
+      this.yearsElement.appendChild(elm)
     }
 
   }

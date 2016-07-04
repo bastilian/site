@@ -27,9 +27,14 @@ function Site() {
         return response.json()
       })
       .then(function(json) {
+        var i = 0
         json.events.forEach(function (event) {
-          that.timeline.addEvent(event);
+          setTimeout(function () {
+            that.timeline.addEvent(event);
+          }.bind(this), 35*i)
+          i++;
         });
+        that.timeline.renderYears();
         return that.data = json;
       })
       .then(function (json) {

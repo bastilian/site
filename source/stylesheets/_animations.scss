@@ -1,5 +1,14 @@
 $bezier: cubic-bezier(.47, -.38, .55, 1.97);
 
+@keyframes showYear {
+  from {
+    height: 0;
+  }
+  to {
+    height: 80px;
+  }
+}
+
 @keyframes pulse {
   0% {
     opacity: 0;
@@ -14,5 +23,17 @@ $bezier: cubic-bezier(.47, -.38, .55, 1.97);
   100% {
     opacity: 0;
     transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: inherit;
+    transform: scale(inherit);
   }
 }

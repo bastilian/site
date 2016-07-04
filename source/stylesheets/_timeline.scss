@@ -12,6 +12,7 @@
   }
 
   .year {
+    animation: showYear 555ms 1 $bezier;
     border-left: 1px solid $translucent-light;
     background: $very-translucent-background;
     color: $light;
@@ -22,18 +23,20 @@
     padding-left: 5px;
     z-index: -1;
     width: 100%;
+    bottom: 0;
   }
 
   .event {
+    animation: grow 555ms 1 $bezier;
     background: $translucent-light-bright;
     border-radius: 50%;
     display: inline-block;
     height: 15px;
     left: 0;
     margin: 2em;
-    opacity: .7;
-    transition: all 250ms $bezier;
     width: 15px;
+    transform: scale(1);
+    transition: all 250ms $bezier;
 
     &.talk {
       margin-top: 3.5em;
