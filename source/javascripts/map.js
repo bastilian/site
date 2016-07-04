@@ -27,7 +27,6 @@ function Map () {
   this.mapAddress = function (address) {
     this.geocoder.geocode({'address': address}, function(results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
-        console.log(address, [results[0].geometry.location.lat(), results[0].geometry.location.lng()]);
         L.marker([results[0].geometry.location.lat(),
                   results[0].geometry.location.lng()
         ], { icon: this.marker } ).addTo(this.placesLayer)
