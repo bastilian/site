@@ -31,10 +31,9 @@ function Site() {
         json.events.forEach(function (event) {
           setTimeout(function () {
             that.timeline.addEvent(event);
-          }.bind(this), 35*i)
+          }.bind(this), 1200 + 35*i)
           i++;
         });
-        that.timeline.renderYears();
         return that.data = json;
       })
       .then(function (json) {

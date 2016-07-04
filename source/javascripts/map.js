@@ -52,8 +52,12 @@ function Map () {
   }
 
   this.addMarkers = function (places) {
+    var i = 0
     places.forEach( function (place) {
-      this.addMarker(place)
+      setTimeout(function () {
+        this.addMarker(place)
+      }.bind(this), 500 + 75 * i)
+      i++
     }.bind(this));
   }
 
