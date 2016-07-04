@@ -1,37 +1,28 @@
 ---
-title: "Hi! I'm Sebastian"
+title: "Hej! I'm Sebastian"
 ---
 
-<p>
-  In 2006 I started working as a web developer doing mainly front end development and working on projects with Ruby and Rails in my spare time.
-  I went on working with Rails at my day-job two years later, improving and maintaining <a href="http://fluxiom.com">Fluxiom</a> and building custom solutions for clients based on BrowserCMS, Mephisto and WordPress with rich JavaScript front ends.
-  After more than 2 years I took a little detour and learned ColdFusion while working at a small agency for a while.
-  To work with Ruby and Rails again and started working for <a href="http://tupalo.com">Tupalo.com</a>.
-  After a period of freelancing and working for startups, like whatchado, I joined <a href="http://engineyard.com">Engine Yard</a> as <strong>Application Support Engineer</strong>.
-</p>
 
-<p>
-  In my free time I occasionally attend meetups and conferences, give talks and sometimes organize events like RailsGirls Workshops and ROSSConf.
-</p>
+<h3>TL;DR</h3>
 
-<dl>
-  <dt>Living in:</dt>
-  <dd>Vienna, Austria</dd>
-  <dt>Born in:</dt>
-  <dd>Graz, Austria</dd>
-  <dt>Born on:</dt>
-  <dd>7th January 1986</dd>
-  <dt>Languages:</dt>
-  <dd>German, English</dd>
-  <dt>Working with:</dt>
-  <dd>Ruby, JavaScript, HTML, CSS, PostgreSQL, RethinkDB, Docker, CoreOS, nginx, git, bash, zsh, *nix-systems</dt>
-</dl>
+<ul>
+  <li>I'm a programmer</li>
+  <li>I love <a href="">JavaScript</a> and <a href="https://ruby-lang.org">Ruby</a>
+  <li>I worked for companies like <a href="#wollzelle">wollzelle</a>, <a href="#whatchado">whatchado</a>, <a href="#tupalo">Tupalo.com</a> and <a href="#engineyard">Engine Yard</a></li>
+  <li>I like working as a developer as much as helping people in support</li>
+  <li>I contribute to open source projects</li>
+  <li>I occasionally attend meetups and conferences where I sometimes give talks</li>
+  <li>I helped and organized events like RailsGirls Workshops and ROSSConf.</li>
+  <li>I moderated conferences like JSIST and Codefront</li>
+</ul>
+
+<h3>Timeline</h3>
 
 <% group_events_by(data.user.events, :year).reverse.each do |year, events| %>
-  <h3 id="<%= year %>"><%= year %></h3>
+  <h4 id="<%= year %>"><%= year %></h4>
   <ul class="about-event">
     <% events.sort_by { |e| e.type }.reverse.each do |event| %>
-      <li>
+      <li id="<%= event.url.split('/').last if event.url%>">
         <strong<%= ' class="big"' if event.url %>>
           <a href="<%= event.url %>"<%= event.color ? " style='color:##{event.color}'" : '' %>>
             <%= event.title %>
@@ -50,3 +41,18 @@ title: "Hi! I'm Sebastian"
     <% end %>
   </ul>
 <% end %>
+
+<h3>Meta:</h3>
+
+<dl>
+  <dt>Living in:</dt>
+  <dd>Vienna, Austria</dd>
+  <dt>Born in:</dt>
+  <dd>Graz, Austria</dd>
+  <dt>Born on:</dt>
+  <dd>7th January 1986</dd>
+  <dt>Languages:</dt>
+  <dd>German, English</dd>
+  <dt>Working with:</dt>
+  <dd>Ruby, JavaScript, HTML, CSS, PostgreSQL, RethinkDB, Docker, CoreOS, nginx, git, bash, zsh, *nix-systems</dt>
+</dl>
