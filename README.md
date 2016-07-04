@@ -15,7 +15,7 @@ The Docker container will have everything you need to run the site locally. It h
 
 ```shell
 $ docker-compose build
-$ docker-compose up site
+$ docker-compose up server
 ```
 
 ### without Docker
