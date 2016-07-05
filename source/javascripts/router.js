@@ -46,6 +46,16 @@ function Router() {
     }.bind(this))
   }
 
+  this.stripOwnLocation = function (href) {
+    var link = href.replace('http://' + location.host, '')
+
+    if (link.startsWith(':')) {
+      link = link.replace(':' + location.port)
+    }
+
+    return link
+  }
+
   this.parseHtml = function (aHTMLString) {
     var parser = new DOMParser();
     var doc = parser.parseFromString(aHTMLString, "text/html")
