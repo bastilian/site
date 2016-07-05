@@ -35,7 +35,7 @@ function Router() {
         link = this.getLink(event.target)
       };
 
-      if (link && !this.stripOwnLocation(link.href).startsWith('http')) {
+      if (link && !link.href.startsWith('mailto') && !this.stripOwnLocation(link.href).startsWith('http')) {
         this.navigate(link.href)
         event.preventDefault()
         event.stopPropagation()
