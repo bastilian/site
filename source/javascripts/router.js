@@ -29,20 +29,22 @@ function Router() {
 
   this.registerLinkListener = function () {
     this.site.element.addEventListener('click', function (event) {
-      var link = event.target;
+      var link = event.target
 
-      if (!link.href)
-        link = this.getLink(event.target);
+      if (!link.href) {
+        link = this.getLink(event.target)
+      };
 
-      if (link && !link.href.startsWith('http')) {
-        this.navigate(link.href);
-        event.preventDefault();
-        event.stopPropagation();
+      if (link && !this.stripOwnLocation(link.href).startsWith('http')) {
+        this.navigate(link.href)
+        event.preventDefault()
+        event.stopPropagation()
       }
+
     }.bind(this))
 
     window.addEventListener('popstate', function (event) {
-      this.fetchContent(event.target.location.pathname);
+      this.fetchContent(event.target.location.pathname)
     }.bind(this))
   }
 
