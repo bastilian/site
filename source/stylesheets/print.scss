@@ -8,9 +8,22 @@ body,
   background: inherit;
 }
 
+a,
+a:active,
+a:hover,
+a:link,
+a:visited,
+.about-event a,
+.about-event a:active,
+.about-event a:hover,
+.about-event a:link,
+.about-event a:visited {
+  color: inherit;
+}
 
 #content {
   font-size: .9em;
+  margin-top: 5em;
 
   section,
   header {
@@ -27,6 +40,10 @@ body,
   }
 }
 
+h4 {
+  margin-top: 2em;
+}
+
 .tags {
   position: absolute;
   right: 2em;
@@ -40,9 +57,32 @@ body,
 
 #map,
 nav,
-.social-accounts,
 #timeline,
 .vcard .image,
 .fork {
   display: none;
+}
+
+.social-accounts {
+  display: block;
+  width: 88%;
+  left: 0;
+  top: 5em;
+
+  li {
+    margin-right: 1.5em;
+  }
+
+  .icon {
+    font-size: .7em;
+  }
+
+  .mail {
+    display: none;
+  }
+
+  span.social-link {
+    display: inline-block;
+    font-size: .7em;
+  }
 }
