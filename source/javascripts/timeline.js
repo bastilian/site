@@ -82,7 +82,7 @@ function Timeline () {
   }
 
   this.yearsBetween = function (start, end) {
-    return (this.monthsBetween(start, end)/12)+1;
+    return (this.monthsBetween(start, end)/12);
   }
 
   this.renderYears = function () {
