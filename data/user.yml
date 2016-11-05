@@ -154,8 +154,7 @@
       latlng:
         - 46.5546503
         - 15.645881199999963
-    - current: "true"
-      location: "Vienna, Austria"
+    - location: "Vienna, Austria"
       latlng:
         - 48.2081743
         - 16.37381890000006
@@ -184,6 +183,7 @@
         - 60.16985569999999
         - 24.93837899999994
     - location: "Amsterdam, NL"
+      current: "true"
       latlng:
         - 52.3702157
         - 4.895167899999933
