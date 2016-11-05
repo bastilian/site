@@ -2,7 +2,7 @@
   name: "Sebastian Gräßl"
   alias: "bastilian"
   tags:
-    - Programmer with a <span class="icon typicons-heart"></span> for Web Development
+    - Ruby & JavaScript Developer at <a href="https://redhat.com" style="color:#cc0000;font-weight:bold;text-decoration:none;">Red Hat Inc.</a>
     - Data & Information nerd
     - Free & Open culture enthusiast
   events:
@@ -124,6 +124,11 @@
       date: "2015-10-17"
       title: "vienna.rb workshop material: Quick Start Rails and Ruby"
       url: "https://github.com/vienna-rb/Quick-Start-Rails-and-Ruby"
+    - type: "work"
+      date: "2016-10-17"
+      endDate: "2030-01-01"
+      title: "Red Hat Inc. | Ruby & JavaScript Developer"
+      color: "E92429"
   places:
     - location: "Budapest, Hungary"
       latlng:
