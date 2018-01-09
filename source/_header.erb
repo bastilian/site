@@ -7,18 +7,11 @@
   </div>
 
   <div class="vcard-names">
-    <h1 class="vcard-fullname" itemprop="name"><%= data.user.name %></h1>
+    <h1 class="vcard-fullname" itemprop="name"><a href="/about"><%= data.user.name %></a></h1>
     <% if data.user.alias %>
       <span class="aka">aka. <span class="vcard-username" itemprop="additionalName"><%= data.user.alias %></span></span>
     <% end %>
   </div>
-
-  <nav>
-    <ul>
-      <li><a href="http://blog.bastilian.me">Blog</a></li>
-      <li><a href="/about">About</a></li>
-    </ul>
-  </nav>
 
   <div class="tags">
     <ul>
