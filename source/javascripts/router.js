@@ -28,7 +28,7 @@ function Router() {
   }
 
   this.registerLinkListener = function () {
-    this.site.element.addEventListener('click', function (event) {
+    this.site.addEventListener('click', function (event) {
       var link = event.target
 
       if (!link.href) {

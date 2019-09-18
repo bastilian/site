@@ -81,10 +81,11 @@ GEM
       middleman-core (>= 3.2)
       net-sftp
       ptools
-    middleman-livereload (3.4.6)
-      em-websocket (~> 0.5.1)
-      middleman-core (>= 3.3)
-      rack-livereload (~> 0.3.15)
+    middleman-livereload (3.1.1)
+      em-websocket (>= 0.2.0)
+      middleman-core (>= 3.0.2)
+      multi_json (~> 1.0)
+      rack-livereload
     middleman-sprockets (3.5.0)
       middleman-core (>= 3.3)
       sprockets (~> 2.12.1)
@@ -95,7 +96,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
     minitest (5.11.1)
-    multi_json (1.13.0)
+    multi_json (1.13.1)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
@@ -147,8 +148,8 @@ PLATFORMS
 DEPENDENCIES
   middleman (= 3.4.1)
   middleman-blog
-  middleman-deploy
-  middleman-livereload
+  middleman-deploy (~> 1.0)
+  middleman-livereload (~> 3.1.0)
   rake
   tzinfo-data
 

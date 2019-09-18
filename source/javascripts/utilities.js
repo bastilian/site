@@ -58,3 +58,7 @@ function empty(el) {
 function el(tag) {
   return document.createElement(tag);
 }
+
+function createComponent (...args) {
+  customElements.define(...args);
+}

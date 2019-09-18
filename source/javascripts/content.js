@@ -8,7 +8,7 @@ function Content() {
 
   this.updateContent = function (content) {
     empty(this.element);
-    this.site.element.className = content.site_classes;
+    this.site.className = content.site_classes;
     this.element.appendChild(content.content);
   }
 
