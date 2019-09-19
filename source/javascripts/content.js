@@ -1,16 +1,16 @@
-function Content() {
-
-  this.initialize = function (site) {
-    this.site    = site;
-    this.body    = document.querySelectorAll('body')[0];
-    this.element = document.querySelectorAll('#content')[0];
+class Content extends Component {
+  init () {
+    this.contentBody = this.innerHTML;
   }
 
-  this.updateContent = function (content) {
-    empty(this.element);
-    this.site.className = content.site_classes;
-    this.element.appendChild(content.content);
+  updateContent (content) {
+    this.contentBody = content;
+    this.rerender();
   }
 
-  this.initialize.apply(this, arguments);
+  render () {
+    return this.contentBody;
+  }
 }
+
+Component.create('content', Content);

@@ -1,12 +1,31 @@
-function Router() {
-
-  this.initialize = function (site) {
+class Router {
+  constructor (site) {
     this.site = site;
-
     this.registerLinkListener();
   }
 
-  this.getLink = function (element, depth) {
+  registerLinkListener () {
+    this.site.addEventListener('click', (event) => {
+      const link = event.target
+
+      if (!link.href) {
+        link = this.getLink(event.target)
+      };
+
+      if (link && !link.href.startsWith('mailto') && !this.stripOwnLocation(link.href).startsWith('http')) {
+        this.navigate(link.href)
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+    })
+
+    window.addEventListener('popstate', (event) => {
+      this.fetchContent(event.target.location.pathname)
+    })
+  }
+
+  getLink (element, depth) {
     var elm;
 
     if (!index)
@@ -27,28 +46,7 @@ function Router() {
     return elm;
   }
 
-  this.registerLinkListener = function () {
-    this.site.addEventListener('click', function (event) {
-      var link = event.target
-
-      if (!link.href) {
-        link = this.getLink(event.target)
-      };
-
-      if (link && !link.href.startsWith('mailto') && !this.stripOwnLocation(link.href).startsWith('http')) {
-        this.navigate(link.href)
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-    }.bind(this))
-
-    window.addEventListener('popstate', function (event) {
-      this.fetchContent(event.target.location.pathname)
-    }.bind(this))
-  }
-
-  this.stripOwnLocation = function (href) {
+  stripOwnLocation (href) {
     var link = href.replace('http://' + location.host, '')
 
     if (link.startsWith(':')) {
@@ -58,15 +56,8 @@ function Router() {
     return link
   }
 
-  this.parseHtml = function (aHTMLString) {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(aHTMLString, "text/html")
-
-    return doc;
-  }
-
-  this.getContent = function (response) {
-    var elm = this.parseHtml(response);
+  getContent (response) {
+    var elm = html(response);
 
     var content = el('div');
     content.innerHTML = elm.querySelectorAll('#content')[0].innerHTML;
@@ -77,32 +68,23 @@ function Router() {
     return { content: content, site_classes: site_classes, title: title };
   }
 
-  this.fetchContent = function (url) {
-    var that = this;
-
+  fetchContent = (url) => {
     return fetch(url)
-      .then(function (response) {
-        return response.text();
-      })
-      .then(function (body) {
-        return that.getContent(body);
-      })
-      .then(function (content) {
-        that.site.content.updateContent(content);
-
+      .then((response) => response.text())
+      .then((body) => this.getContent(body))
+      .then((content) => {
+        this.site.content.updateContent(content.content.innerHTML);
         return content;
       })
-      .then(function (content) {
+      .then((content) => {
         document.title = content.title;
       });
   }
 
-  this.navigate = function (url) {
+  navigate (url) {
     this.fetchContent(url)
-      .then(function () {
+      .then(() => {
         history.pushState(null, null, url);
       })
   }
-
-  this.initialize.apply(this, arguments);
 }

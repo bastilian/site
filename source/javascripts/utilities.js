@@ -59,6 +59,9 @@ function el(tag) {
   return document.createElement(tag);
 }
 
-function createComponent (...args) {
-  customElements.define(...args);
+function html(aHTMLString) {
+  var parser = new DOMParser();
+  var doc = parser.parseFromString(aHTMLString, "text/html")
+
+  return doc;
 }

@@ -1,18 +1,21 @@
-function Map () {
-
-  this.initialize = function (site) {
-    this.site     = site;
-    this.token    = 'pk.eyJ1IjoiYmFzdGlsaWFuIiwiYSI6IllDZ3lNZHMifQ.uwq0dxjwyWEuG3zF59wUig';
-    this.geocoder = new google.maps.Geocoder();
+class Map extends Component {
+  init () {
+    this.token         = 'pk.eyJ1IjoiYmFzdGlsaWFuIiwiYSI6IllDZ3lNZHMifQ.uwq0dxjwyWEuG3zF59wUig';
     this.placesLayer   = new L.LayerGroup();
+    this.geocoder      = new google.maps.Geocoder();
     this.marker        = L.divIcon({className: 'marker', iconSize : 5});
     this.currentMarker = L.divIcon({className: 'marker current', iconSize : 5});
-    this.map = L.map('map', { zoomControl: false, layers: [this.placesLayer]}).setView([55, -45], 3);
 
+    this.id = 'leaflet-map';
+  }
+
+  mounted () {
     this.setupMap();
   }
 
-  this.setupMap = function () {
+  setupMap () {
+    this.map = L.map('leaflet-map', { zoomControl: false, layers: [this.placesLayer]}).setView([55, -45], 3);
+
     this.map.dragging.disable();
     this.map.touchZoom.disable();
     this.map.doubleClickZoom.disable();
@@ -24,7 +27,7 @@ function Map () {
     this.loadTileLayer();
   }
 
-  this.mapAddress = function (address) {
+  mapAddress (address) {
     this.geocoder.geocode({'address': address}, function(results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         L.marker([results[0].geometry.location.lat(),
@@ -34,7 +37,7 @@ function Map () {
     });
   }
 
-  this.addMarker = function (place) {
+  addMarker (place) {
     if (typeof place.latlng != 'undefined'){
       var marker = L.marker(place.latlng, { icon: (place.current ? this.currentMarker : this.marker) } )
                     .addTo(this.placesLayer);
@@ -43,22 +46,22 @@ function Map () {
     }
   }
 
-  this.addMarkers = function (places) {
+  addMarkers (places) {
     var i = 0
-    places.forEach( function (place) {
-      setTimeout(function () {
+    places.forEach((place) =>  {
+      setTimeout(() => {
         this.addMarker(place)
-      }.bind(this), 500 + 75 * i)
+      }, 500 + 75 * i)
       i++
-    }.bind(this));
+    });
   }
 
-  this.loadTileLayer = function () {
+  loadTileLayer () {
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + this.token, {
       id: 'mapbox.light',
       attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
     }).addTo(this.map)
   }
-
-  this.initialize.apply(this, arguments);
 }
+
+Component.create('map', Map);

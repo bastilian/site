@@ -6,15 +6,16 @@
 //= require router
 
 class Site extends Component {
-  mounted () {
+  init () {
     this.url      = this.getAttribute('url');;
-
     this.data     = {};
     this.router   = new Router(this);
     this.timeline = new Timeline(this);
-    this.content  = new Content(this);
-    this.map      = new Map();
+    this.content  = document.getElementById('content');
+    this.map      = document.getElementById('leaflet-map');
+  }
 
+  mounted () {
     this.getData();
   }
 
@@ -37,7 +38,6 @@ class Site extends Component {
   setData (json) {
     return this.data = json;
   }
-}
+};
 
-// "site" is not a valid custom element name
-createComponent('my-site', Site);
+Component.create('site', Site);

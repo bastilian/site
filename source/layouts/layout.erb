@@ -8,18 +8,6 @@
     <%= stylesheet_link_tag "all" %>
     <%= stylesheet_link_tag 'print', media: :print %>
 
-    <script type="text/javascript">
-        window.cookieconsent_options = {
-          "message": "This website uses cookies for analytics and tracking your every move.",
-          "dismiss": "OK.",
-          "learnMore": "Interesting. Tell me more.",
-          "link": "/privacy",
-          "theme": false,
-          "expiryDays": 30
-        };
-    </script>
-
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
     <link type="text/plain" rel="author" href="http://bastilian.me/humans.txt" />
   </head>
 
@@ -27,9 +15,9 @@
     <my-site url="/user.json" id="site" class="<%= current_page.path == 'index.html' ? 'index' : '' %>">
       <%= partial 'header' %>
 
-      <div id="map"></div>
+      <my-map></my-map>
       <div id='timeline'></div>
-        <div id="content">
+        <my-content id="content">
           <div>
             <header>
               <h2><%= current_page.data.title || "Sebastian Gräßl" %></h2>
@@ -63,7 +51,7 @@
               </div>
             </aside>
           </div>
-        </div>
+        </my-content>
       <footer>
         © 2016 by Sebastian Gräßl | <a href="/privacy">Privacy Policy</a>
       </footer>
@@ -71,14 +59,6 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADczaSQDsbY4uh5VzD-xUxWTpDIeshWe0"></script>
     <%= javascript_include_tag  "all" %>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-75253038-1', 'auto');
-      ga('send', 'pageview');
-    </script>
   </body>
 </html>
