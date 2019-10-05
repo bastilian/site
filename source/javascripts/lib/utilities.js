@@ -35,33 +35,33 @@
   if (!Array.prototype.min) Array.prototype.min = mn;
 })();
 
-function addClass(el, className) {
+export function addClass(el, className) {
   if (el.classList)
     el.classList.add(className);
   else
     el.className += ' ' + className;
 }
 
-function removeClass(el, className) {
+export function removeClass(el, className) {
   if (el.classList)
     el.classList.remove(className);
   else
     el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 }
 
-function empty(el) {
+export function empty(el) {
   while (el.hasChildNodes()) {
-    el.removeChild(el.lastChild);
+    el.removeChild(el.lastChild)
   }
 }
 
-function el(tag) {
-  return document.createElement(tag);
+export function el(tag) {
+  return document.createElement(tag)
 }
 
-function html(aHTMLString) {
-  var parser = new DOMParser();
+export function html(aHTMLString) {
+  var parser = new DOMParser()
   var doc = parser.parseFromString(aHTMLString, "text/html")
 
-  return doc;
+  return doc
 }

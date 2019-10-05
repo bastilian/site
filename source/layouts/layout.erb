@@ -16,49 +16,49 @@
       <%= partial 'header' %>
 
       <my-map></my-map>
-      <div id='timeline'></div>
-        <my-content id="content">
-          <div>
-            <header>
-              <h2><%= current_page.data.title || "Sebastian Gräßl" %></h2>
-            </header>
+      <my-timeline id='timeline'></my-timeline>
 
-            <section>
-              <%= yield %>
-            </section>
+      <my-content id="content">
+        <div>
+          <header>
+            <h2><%= current_page.data.title || "Sebastian Gräßl" %></h2>
+          </header>
 
-            <aside>
-              <div>
-                <% if current_page.data.image %>
-                  <div class="image">
-                    <img class="featured-image" src="<%= current_page.data.image %>" alt="" />
-                  </div>
-                <% end %>
+          <section>
+            <%= yield %>
+          </section>
 
-                <% if current_page.data.metatitle %>
-                  <p>
-                    <%= current_page.data.metatitle %>
-                  </p>
-                <% end %>
-                <% if current_page.data.worked_with %>
-                  <strong>Worked with:</strong>
-                  <ul>
-                    <% current_page.data.worked_with.each do | item | %>
-                      <li><%= item %></li>
-                    <% end %>
-                  </ul>
-                <% end %>
-              </div>
-            </aside>
-          </div>
-        </my-content>
+          <aside>
+            <div>
+              <% if current_page.data.image %>
+                <div class="image">
+                  <img class="featured-image" src="<%= current_page.data.image %>" alt="" />
+                </div>
+              <% end %>
+
+              <% if current_page.data.metatitle %>
+                <p>
+                  <%= current_page.data.metatitle %>
+                </p>
+              <% end %>
+              <% if current_page.data.worked_with %>
+                <strong>Worked with:</strong>
+                <ul>
+                  <% current_page.data.worked_with.each do | item | %>
+                    <li><%= item %></li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </div>
+          </aside>
+        </div>
+      </my-content>
       <footer>
         © 2016 by Sebastian Gräßl | <a href="/privacy">Privacy Policy</a>
       </footer>
     </my-site>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADczaSQDsbY4uh5VzD-xUxWTpDIeshWe0"></script>
-    <%= javascript_include_tag  "all" %>
-
+    <script src="/javascripts/main.js" type="module"></script>
   </body>
 </html>
